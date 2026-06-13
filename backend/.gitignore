@@ -1,0 +1,18 @@
+# Binaries
+/api
+/api.exe
+/cmd/*/cmd
+
+# Build output
+/build/
+/tmp/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
