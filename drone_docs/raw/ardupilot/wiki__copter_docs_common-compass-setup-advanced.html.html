@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advanced Compass Setup &mdash; Copter  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/ardupilot.css?v=ae9666d5" />
+      <link rel="stylesheet" type="text/css" href="../_static/common_theme_override.css?v=01d3cdd0" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon_copter.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/./useralerts.js?v=3014f84e"></script>
+        <script data-domain="ardupilot.org" defer="defer" src="https://plausible.ardupilot.org/js/script.outbound-links.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Refining Calibration Parameters using a Flight Log" href="common-magfit.html" />
+    <link rel="prev" title="CAN Bus Setup" href="common-canbus-setup-advanced.html" /> 
+</head>
+
+<body class="wy-body-for-nav">    
+    <div id='cssmenu'>
+        <ul>
+           <li><a href='/ardupilot/index.html'>Home</a>
+              <ul>
+                 <li><a href='/copter/index.html'>Copter</a></li>
+                 <li><a href='/plane/index.html'>Plane</a></li>
+                 <li><a href='/rover/index.html'>Rover</a></li>
+                 <li><a href='/blimp/index.html'>Blimp</a></li>
+                 <li><a href='/sub/index.html'>Sub</a></li>
+                 <li><a href='/antennatracker/index.html'>AntennaTracker</a></li>
+                 <li><a href='/planner/index.html'>Mission Planner</a></li>
+                 <li><a href='/planner2/index.html'>APM Planner 2</a></li>
+                 <li><a href='/mavproxy/index.html'>MAVProxy</a></li>
+                 <li><a href='/dev/docs/companion-computers.html'>Companion Computers</a></li>
+                 <li><a href='/dev/index.html'>Developer</a></li>
+              </ul>
+           </li>
+           
+          
+           
+           <li><a href='https://firmware.ardupilot.org/'>Downloads</a>
+              <ul>
+                <li><a href='https://firmware.ardupilot.org/Tools/MissionPlanner/'>Mission Planner</a></li>
+                <li><a href='https://firmware.ardupilot.org/Tools/APMPlanner/'>APM Planner 2</a></li>
+                   <li><a title="Advanced User Tools" href="common-downloads_advanced_user_tools.html">Advanced User Tools</a></li>
+                   <li><a title="Developer Tools" href="common-downloads_developer_tools.html">Developer Tools</a></li>
+                   <li><a title="Firmware" href="common-downloads_firmware.html">Firmware</a></li>
+                </ul>
+           </li>
+           
+           <li><a href='https://discuss.ardupilot.org' />Community</a>
+              <ul>
+                 <li><a href='https://discuss.ardupilot.org/'>Support Forums</a></li>
+                 <li><a href='https://www.facebook.com/groups/ArduPilot.org'>Facebook</a></li>
+                 <li><a href='https://ardupilot.org/discord'>Developer Chat (Discord)</a></li>
+                 <li><a href='https://ardupilot.org/discord'>Developer Voice (Discord)</a></li>
+				 <li><a href='https://ardupilot.org/dev/docs/common-contact-us.html'>Contact us</a></li>
+				 <li><a href='https://ardupilot.org/dev/index.html#getting-involved'>Getting involved</a></li>
+                   <li><a title="Commercial Support" href="common-commercial-support.html">Commercial Support</a></li>
+                   <li><a title="Dev Team" href="common-team.html">Development Team</a></li>
+                   <li><a title="Training Centers" href="common-training-centers.html">UAS Training Centers</a></li>
+              </ul>
+           </li>
+             <li><a title="Stores" href="common-stores.html">Stores</a></li>
+
+
+           
+                        <li><a title="About" href="../index.html">About</a>
+               <ul>
+                   <li><a title="Project News" href="project-news.html">News</a></li>
+                   <li><a title="History of ArduPilot" href="common-history-of-ardupilot.html">History</a></li>
+                   <li><a href='https://ardupilot.org/dev/docs/license-gplv3.html'>License</a></li>
+                   <li><a href='https://ardupilot.org/dev/docs/trademark.html'>Trademark</a></li>
+                   <li><a title="Acknowledgments" href="common-acknowledgments.html">Acknowledgments</a></li>
+                   <li><a title="Wiki Editing Guide" href="common-wiki_editing_guide.html">Wiki Editing Guide</a></li>
+                   <li><a title="Partners Program" href="common-partners.html">Partners Program</a></li>
+               </ul>
+             </li>
+        </ul>
+        
+
+</div>
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Copter
+              <img src="../_static/ardupilot_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="copter-introduction.html">Introduction to Copter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common-autopilots.html">Choosing an Autopilot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common-GCS.html">Ground Control Stations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="initial-setup.html">First Time Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flying-arducopter.html">First Flight and Tuning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traditional-helicopters.html">Traditional Helicopters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common-mission-planning.html">Mission Planning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common-when-problems-arise.html">If A Problem Arises</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="common-advanced-configuration.html">Advanced Configuration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="common-analog-pins.html">Analog Pins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-rcoutput-mapping.html">Autopilot Output Mapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autotune.html">AutoTune</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-auxiliary-functions.html">Auxiliary Function Switches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-baro-temp-comp.html">Baro Temperature Compensation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_baro_thrust_compensation.html">Baro Thrust Compensation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boat-mode.html">Boat mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-bootloader-update.html">Bootloader Update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-blheli32-passthru.html">BLHeli ESCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-canbus-setup-advanced.html">CAN Bus Setup</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Compass Setup (Advanced)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compass-settings">Compass Settings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#compass-ordering-and-priority">Compass Ordering and Priority</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compass-enables">Compass Enables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#orientation">Orientation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#other-parameters">Other parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#compassmot-compensation-for-interference-from-the-power-wires-escs-and-motors">CompassMot â compensation for interference from the power wires, ESCs and motors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#automatic-offset-calibration">Automatic Offset Calibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compass-error-messages">Compass error messages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#refining-calibration-parameters-using-a-flight-log">Refining Calibration Parameters using a Flight Log</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="common-magfit.html">Magfit WebTools Utility</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="common-compassless.html">Compass-less Operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="current-limiting-and-voltage-scaling.html">Current Limiting and Voltage Scaling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-tkoff-rpm-min.html">Damaged Motor/Prop RPM Checks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-displayport.html">DisplayPort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-uavcan-setup-advanced.html">DroneCAN Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-apm-navigation-extended-kalman-filter-overview.html">EKF (Extended Kalman Filter)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-ek3-affinity-lane-switching.html">EKF Affinity &amp; Lane Switching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-ekf-sources.html">EKF Sources and Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-network.html">Ethernet/Network Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-network-capture.html">Network Capture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-geofencing-landing-page.html">Fence Failsafes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flight-options.html">Flight Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-flight-time-recorder.html">Flight Time Recorder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-FPort-receivers.html">FPort Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-gpios.html">GPIOs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-gps-for-yaw.html">GPS for Yaw (aka Moving Baseline)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-gps-for-alt.html">GPS for Altitude</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-non-gps-to-gps.html">GPS/Non-GPS Transitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-gcs-only-operation.html">Ground Control Station Only Operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ground-effect-compensation.html">Ground Effect Compensation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-imu-fft.html">In-Flight FTT and filter control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-imutempcal.html">IMU Temperature Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-watchdog.html">Independent Watchdog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-servo-limit-cycle-detection.html">Limit Cycle Prevention</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-lua-scripts.html">LUA Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-magnetic-interference.html">Magnetic Interference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-hires-mag-array.html">Magnetometer GeoPhys Array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-mavlink-configuration.html">MAVLink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-MAVLink2-signing.html">MAVLink2 Packet Signing (Security)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motor-thrust-scaling.html">Motor Thrust Scaling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-moving-vehicle-initialization.html">Moving Vehicle Initialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-multiple-rx.html">Multiple Radio Control Receivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-non-gps-navigation-landing-page.html">Non-GPS Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-ntf-devices.html">Notification Devices (LEDs,Buzzer,etc.)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-imu-notch-filtering.html">Notch Filter Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-object-avoidance-landing-page.html">Object Avoidance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-optical-flow-sensors-landingpage.html">Optical Flow Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-osd-overview.html">On Screen Displays (OSD)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-paramosd.html">OSD Parameter Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parameters.html">Parameter List (Full)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-parameter-lockdown.html">Parameter Lockdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-parameter-reset.html">Parameter Reset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="precision-landing-and-loiter.html">Precision Landing and Loiter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-rcmap.html">RC Input Channel Mapping (RCMAP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-rc-options.html">RC Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-rssi-received-signal-strength-indication.html">Received Signal Strength Indication (RSSI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-redundant-telemetry.html">Redundant Telemetry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-camera-runcam.html">RunCam Camera Configuration and Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-safety-switch-pixhawk.html">Safety Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-sensor-offset-compensation.html">Sensor Position Offset Compensation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-sensor-testing.html">Sensor Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-serial-over-DroneCAN.html">Serial Forwarding to DroneCAN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-serial-passthrough.html">Serial Port to Port Passthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-serial-options.html">Serial Port Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slung-payload.html">Slung Payload</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terrain-following-manual-modes.html">Surface Tracking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-telemetry-port-setup.html">Telemetry Port Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terrain-following.html">Terrain Following (Autonomous modes)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-tuning.html">Tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-gyroflow.html">Video Stabilization (Gyroflow)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-vtx.html">Video Transmitter Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-ublox-gps.html">UBlox GPS Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="weathervaning.html">Weathervaning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="airspeed-estimation.html">Windspeed Estimation and Baro Compensation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="common-optional-hardware.html">Peripheral Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="additional-information.html">Additional Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common-user-alerts.html">User Alerts</a></li>
+</ul>
+
+          <!-- add paypal and dronecode logos -->        <div style="margin: auto; padding-left:20px; padding-right:20px; width=100%">
+
+        <hr />
+        <form style="margin:auto;" action="https://ardupilot.org/donate">
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate" />
+        </form>
+        <br>
+        <a href="common-donation.html">Individual</a>
+        <a href="common-partners.html">Partners</a>
+        <a href="https://ardupilot.org/shop">SWAG Shop</a>
+
+        <hr />
+        </div>
+          <!-- endadd paypal and dronecode logos -->
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Copter</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="common-advanced-configuration.html">Advanced Configuration</a></li>
+      <li class="breadcrumb-item active">Advanced Compass Setup</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ArduPilot/ardupilot_wiki/blob/master/common/source/docs/common-compass-setup-advanced.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="advanced-compass-setup">
+<span id="common-compass-setup-advanced"></span><h1>Advanced Compass Setup<a class="headerlink" href="#advanced-compass-setup" title="Link to this heading">Â¶</a></h1>
+<p>This article provides advanced guidance for how to setup the system compass(es) and advanced compass related features.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Users who have only internal compasses or an external compass using a UBlox GPS + compass combination,such as <a class="reference internal" href="common-installing-3dr-ublox-gps-compass-module.html#common-installing-3dr-ublox-gps-compass-module"><span class="std std-ref">UBlox GPS + Compass Module</span></a>, and have mounted it in the default orientation can usually perform a simple âOnboard Calibrationâ as described in <a class="reference internal" href="common-compass-calibration-in-mission-planner.html#common-compass-calibration-in-mission-planner"><span class="std std-ref">Compass Calibration</span></a>).</p>
+</div>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">Â¶</a></h2>
+<p>Accurately setting up the compass is critical because it is the primary
+source of heading information. Without an accurate heading the vehicle
+will not move in the correct direction in autopilot modes (i.e. AUTO,
+LOITER, PosHold, RTL, etc). This can lead to circling (aka
+âtoiletbowlingâ) or fly-aways.</p>
+<p>ArduPilot allows multiple compasses to be connected, but only three are used at one time. And usually, only the primary compass is used, unless there are consistency problems with its readings versus other compasses and/or other sensors. In this case, the autopilot will automatically determine which of the first three compasses to use.</p>
+<p>While many autopilots have an internal compass or compasses, many applications will instead use an external compass. This provides more reliable data
+than an internal compass because of the separation from other
+electronics. See <a class="reference internal" href="common-autopilots.html#common-autopilots"><span class="std std-ref">Choosing an Autopilot</span></a> for details about the specific autopilot to determine how many built-in compasses the autopilot may have, if any.</p>
+<p>Most users will only need to  perform the normal <a class="reference internal" href="common-compass-calibration-in-mission-planner.html#common-compass-calibration-in-mission-planner"><span class="std std-ref">Compass Calibration</span></a> but details are also given on the less-used  <a class="reference internal" href="#common-compass-setup-advanced-compassmot-compensation-for-interference-from-the-power-wires-escs-and-motors"><span class="std std-ref">CompassMot</span></a></p>
+</section>
+<section id="compass-settings">
+<h2>Compass Settings<a class="headerlink" href="#compass-settings" title="Link to this heading">Â¶</a></h2>
+<p>The <em>Mission Planner Compass Setup screen</em> can be found in menu
+<strong>Setup | Mandatory Hardware | Compass</strong> in the sidebar. This
+screen is used for setting compass ordering, priority, calibration, and use. No other settings are required for normal use.</p>
+<figure class="align-default" id="id1">
+<a class="reference external image-reference" href="../_images/CompassCalibration_Onboard.png"><img alt="../_images/CompassCalibration_Onboard.png" src="../_images/CompassCalibration_Onboard.png" /></a>
+<figcaption>
+<p><span class="caption-text">Mission Planner: Advanced Compass Setup and Calibration</span><a class="headerlink" href="#id1" title="Link to this image">Â¶</a></p>
+</figcaption>
+</figure>
+<section id="compass-ordering-and-priority">
+<h3>Compass Ordering and Priority<a class="headerlink" href="#compass-ordering-and-priority" title="Link to this heading">Â¶</a></h3>
+<p>During boot, ArduPilot automatically detects the compasses present in the system, adds them to a list, and assigns the first three a priority (1-3) linked to their DEV ID (<code class="docutils literal notranslate"><span class="pre">COMPASS_PRIOx_ID</span></code>), according to the order in which they are discovered. This priority determines which compass is used by the EKF lanes. The primary compass (highest priority, 1) will be used by all lanes, and fallback to the next viable compass in the first three priorities, if the primary becomes unhealthy.</p>
+<p>The list of discovered compasses and their priority is maintained across boots.</p>
+<p>If a user wishes to change to a different compass for one of the three priorities, he can change the <code class="docutils literal notranslate"><span class="pre">COMPASS_PRIOx_ID</span></code> to that compassâs <code class="docutils literal notranslate"><span class="pre">COMPASS_DEV_IDx</span></code> ID value. If a <code class="docutils literal notranslate"><span class="pre">COMPASS_PRIOx_ID</span></code> is set to zero, the compasses will be moved up contiguously, in order, to fill that priority slot on the next reboot. This is easily done in Mission Planner with the arrows on the right side.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>never change a compassâs <code class="docutils literal notranslate"><span class="pre">COMPASS_DEV_IDx</span></code> ID value manually and then reboot!</p>
+</div>
+<p>If a previously discovered compass is missing or not detected on boot, and is in one of the three priority positions, a pre-arm failure will occur warning the user. The user will need to either remove the compass from the priority position, or correct the problem in order to prevent the pre-arm failure. Mission Planner provides a button to remove an undetected compass on the above screen.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Compasses not present or detected during a calibration will automatically be removed.</p>
+</div>
+</section>
+<section id="compass-enables">
+<h3>Compass Enables<a class="headerlink" href="#compass-enables" title="Link to this heading">Â¶</a></h3>
+<p>Any one of the first three compasses can be disabled. This would leave only the remaining ones to be used by the autopilot. You may wish to disable any internal compasses if you are consistently seeing the âinconsistent compassesâ pre-arm message often and you are sure that the external compass is calibrated.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Compasses should always be enabled for Copter/Rover, but may be disabled (not recommended, if one is available) for Plane.</p>
+</div>
+</div></blockquote>
+</section>
+<section id="orientation">
+<h3>Orientation<a class="headerlink" href="#orientation" title="Link to this heading">Â¶</a></h3>
+<p>The <a class="reference internal" href="parameters.html#ahrs-orientation"><span class="std std-ref">AHRS_ORIENTATION</span></a> must be set correctly for the compass calibration to be successful. In addition,the <a class="reference internal" href="common-accelerometer-calibration.html#common-accelerometer-calibration"><span class="std std-ref">Accelerometer Calibration</span></a> should be completed before the Compass Calibration.</p>
+<p>The setting of the orientation of external compasses is no longer required. Itâs determined automatically during <a class="reference internal" href="common-compass-calibration-in-mission-planner.html#common-compass-calibration-in-mission-planner"><span class="std std-ref">Compass Calibration</span></a> now. This can be disabled, or only report the orientation determined during Compass Calibration, using the <a class="reference internal" href="parameters.html#compass-auto-rot"><span class="std std-ref">COMPASS_AUTO_ROT</span></a> parameter. The orientation determination CAN fail if the magnetic fields are compromised by nearby metal or other interference, especially on 45 deg offset orientations. If the compass is known to be mounted on a 45 degree bias to the accelerometers, and fails to determine orientation during the Compass Calibration, then setting <a class="reference internal" href="parameters.html#compass-auto-rot"><span class="std std-ref">COMPASS_AUTO_ROT</span></a> to â3â and repeating the calibration, may yield a successful completion.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>automatic determination of compass orientation ONLY occurs using normal Compass Calibration. <a class="reference internal" href="#automatic-compass-offset-calibration"><span class="std std-ref">In-flight Calibration</span></a> and <a class="reference internal" href="common-compass-calibration-in-mission-planner.html#large-vehicle-mag-cal"><span class="std std-ref">Large Vehicle Mag Calibration</span></a> require that the orientation be properly set BEFORE attempting these types of calibration.</p>
+</div>
+<p>However, if the need to double-check the orientation of a compass should arise:</p>
+<ul class="simple">
+<li><p>When rotating your aircraft through all axes each of the compasses should move in the same direction, and should be of approximately the same values:</p></li>
+<li><dl class="simple">
+<dt>Northern Hemisphere:</dt><dd><ul>
+<li><p>Z-component should be <em>positive</em></p></li>
+<li><p>when pitching the vehicle down, the X component should <em>increase</em> in value</p></li>
+<li><p>when rolling the vehicle right, the Y component should <em>increase</em> in value</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Southern Hemisphere:</dt><dd><ul>
+<li><p>Z-component should be <em>negative</em></p></li>
+<li><p>when pitching the vehicle down, the X component should <em>decrease</em> in value</p></li>
+<li><p>when rolling the vehicle right, the Y component should <em>decrease</em> in value</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="other-parameters">
+<h3>Other parameters<a class="headerlink" href="#other-parameters" title="Link to this heading">Â¶</a></h3>
+<p>Earlier versions of ArduPilot did not incorporate the world magnetic model database, and a locations magnetic declination might need to manually entered, or learned through flight. This is not necessary now. In addition, this allows the declination to be continuously updated on long distance flights.</p>
+<p>Also, learning the compass offsets in flight, instead of ground calibration, is an option for vehicles difficult to move in order to calibrate. But is not recommended, since the Large Vehicle MagCal option is now available. See <a class="reference internal" href="common-compass-calibration-in-mission-planner.html#common-compass-calibration-in-mission-planner"><span class="std std-ref">Compass Calibration</span></a> page for details.</p>
+</section>
+</section>
+<section id="compassmot-compensation-for-interference-from-the-power-wires-escs-and-motors">
+<span id="common-compass-setup-advanced-compassmot-compensation-for-interference-from-the-power-wires-escs-and-motors"></span><h2>CompassMot â compensation for interference from the power wires, ESCs and motors<a class="headerlink" href="#compassmot-compensation-for-interference-from-the-power-wires-escs-and-motors" title="Link to this heading">Â¶</a></h2>
+<p>This is recommended for vehicles that have only an internal compass and
+on vehicles where there is significant interference on the compass from
+the motors, power wires, etc. CompassMot only works well if you have a
+<a class="reference internal" href="common-powermodule-landingpage.html#common-powermodule-landingpage"><span class="std std-ref">battery current monitor</span></a>
+because the magnetic interference is linear with current drawn.  It is
+technically possible to set-up CompassMot using throttle but this is not
+recommended.</p>
+<p>Please follow these instructions:</p>
+<ul>
+<li><p>Enable the current monitor (aka <a class="reference internal" href="common-powermodule-landingpage.html#common-powermodule-landingpage"><span class="std std-ref">Power Module</span></a>)</p></li>
+<li><p>Disconnect your props, flip them over and rotate them one position
+around the frame.  In this configuration they should push the copter
+down into the ground when the throttle is raised</p></li>
+<li><p>Secure the copter (perhaps with tape) so that it does not move</p></li>
+<li><p>Turn on your transmitter and keep throttle at zero</p></li>
+<li><p>Connect your vehicleâs LiPo battery</p></li>
+<li><p>Connect your autopilot to your computer with the usb cable</p></li>
+<li><p>Open the <strong>Initial Setup | Optional Hardware | Compass/Motor Calib</strong> screen</p></li>
+<li><p>Press the <strong>Start</strong> button</p>
+<blockquote>
+<div><a class="reference external image-reference" href="../_images/CompassCalibration_CompassMot.png"><img alt="../_images/CompassCalibration_CompassMot.png" src="../_images/CompassCalibration_CompassMot.png" /></a>
+</div></blockquote>
+</li>
+<li><p>You should hear your ESCs arming beep</p></li>
+<li><p>Raise the throttle slowly to between 50% ~ 75% (the props will spin!)
+for 5 ~ 10 seconds</p></li>
+<li><p>Quickly bring the throttle back down to zero</p></li>
+<li><p>Press the <strong>Finish</strong> button to complete the calibration</p></li>
+<li><p>Check the % of interference displayed.  If it is less than 30% then
+your compass interference is acceptable and you should see good
+Loiter, RTL and AUTO performance.  If it is 31% ~ 60% then the
+interference is in the âgrey zoneâ where it may be ok (some users are
+fine, some are not).  If it is higher than 60% you should try moving
+your autopilot further up and away from the sources of interference or
+consider purchasing an external compass (or
+<a class="reference internal" href="common-positioning-landing-page.html#common-positioning-landing-page"><span class="std std-ref">GPS+compass module</span></a> (some of these)).</p></li>
+</ul>
+</section>
+<section id="automatic-offset-calibration">
+<span id="automatic-compass-offset-calibration"></span><h2>Automatic Offset Calibration<a class="headerlink" href="#automatic-offset-calibration" title="Link to this heading">Â¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>DO NOT USE THIS WITH GPS-DERIVED YAW! ie <a class="reference internal" href="common-gps-for-yaw.html#common-gps-for-yaw"><span class="std std-ref">GPS for Yaw (aka Moving Baseline)</span></a> in  firmware versions before 4.5.2!</p>
+</div>
+<p>In the 4.0 and later releases of ArduPilot, an automatic offset learning feature is available. The <a class="reference internal" href="parameters.html#compass-learn"><span class="std std-ref">COMPASS_LEARN</span></a> parameter determines how this feature works. This is for advanced users and not recommended.</p>
+<ul class="simple">
+<li><p>If set to 3, the offsets will be learned automatically during flight, be saved, and this parameter reset to 0. Position control modes (Loiter, Auto, etc.) should not be used while the offsets are being learned.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Setting <a class="reference internal" href="parameters.html#compass-learn"><span class="std std-ref">COMPASS_LEARN</span></a> to 1 or 2 is not recommended. These modes are deprecated and are either non-functional, or still in development.</p>
+<p>The procedure for <a class="reference internal" href="parameters.html#compass-learn"><span class="std std-ref">COMPASS_LEARN</span></a> = 3 is:</p>
+<ol class="arabic simple">
+<li><p>set <a class="reference internal" href="parameters.html#compass-learn"><span class="std std-ref">COMPASS_LEARN</span></a> = 3. The message âCompassLearn: Initialisedâ will appear on the MPâs message tab (it does not appear in red letters on the HUD).</p></li>
+<li><p>âBad Compassâ will appear but this is nothing to be worried about. We will hopefully make this disappear before the final release.</p></li>
+<li><p>Arm and drive/fly the vehicle around in whatever mode you like, do some turns âCompassLearn: have earth fieldâ should appear on MPâs message tab and then eventually âCompassLearn: finishedâ.</p></li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You MUST have a GPS lock and signal for this to be successful. Be sure the GPS has a clear âviewâ of the sky and there are no obstructions blocking the GPS signals.</p>
+<ol class="arabic simple" start="4">
+<li><p>If you want you can check the <a class="reference internal" href="parameters.html#compass-learn"><span class="std std-ref">COMPASS_LEARN</span></a> parameter has been set back to zero (you may need to refresh parameters to see this) and the COMPASS_OFS_X/Y/Z values will have changed.</p></li>
+<li><p>This method can also be evoked using the RCxOPTION for âCompass Learnâ. It will activate when the channel goes above 1800uS and automatically complete and save.</p></li>
+</ol>
+</div>
+</section>
+<section id="compass-error-messages">
+<h2>Compass error messages<a class="headerlink" href="#compass-error-messages" title="Link to this heading">Â¶</a></h2>
+<ul class="simple">
+<li><p><strong>Compass Health</strong>: The compass has not sent a signal for at least
+half a second.</p></li>
+<li><p><strong>Compass Variance</strong>: In the EKF solution, compass heading disagrees
+with the heading estimate from other inertial sensors. Clicking the
+EKF button on the Mission Planner HUD will show the magnitude of the
+error.</p></li>
+<li><p><strong>Compass Not Calibrated</strong>: The compass needs to be calibrated.</p></li>
+<li><p><strong>Compass Offsets High</strong>: One of your compass offsets exceeds 600,
+indicating likely magnetic interference. Check for sources of
+interference and try calibrating again.</p></li>
+</ul>
+</section>
+<section id="refining-calibration-parameters-using-a-flight-log">
+<h2>Refining Calibration Parameters using a Flight Log<a class="headerlink" href="#refining-calibration-parameters-using-a-flight-log" title="Link to this heading">Â¶</a></h2>
+<p>The compass offsets, scales, diagonals, and even motor compensation can be determined from a flight dataflash log of the vehicle using an analysis utility.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="common-magfit.html">Magfit WebTools Utility</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="common-canbus-setup-advanced.html" class="btn btn-neutral float-left" title="CAN Bus Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="common-magfit.html" class="btn btn-neutral float-right" title="Refining Calibration Parameters using a Flight Log" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+    Questions, issues, and suggestions about this page can be raised on the <a href="https://discuss.ardupilot.org">forums</a>. Issues and suggestions may be posted on the forums or the <a href="https://github.com/ArduPilot/ardupilot_wiki/issues/new?title=Advanced Compass Setup&amp;body=[Advanced Compass Setup](https://ardupilot.org/copter/docs/common-compass-setup-advanced.html)%20-%20Describe%20the%20issue/suggestion%20and%20improve%20the%20title.%20Please%20keep%20a%20link%20to%20the%20original%20article%20if%20relevant.&amp;labels=docs">Github Issue Tracker</a>.
+    <hr/>
+
+  <div role="contentinfo">
+    <p><a style="float:right;" rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a>&#169; Copyright 2024, ArduPilot Dev Team.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Gps - cleanflight</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="https://media.readthedocs.org/css/badge_only.css" rel="stylesheet">
+  <link href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Gps";
+    var mkdocs_page_input_path = "Gps.md";
+    var mkdocs_page_url = "/Gps/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+  <script src="../readthedocs-data.js"></script>
+  <script src="../readthedocs-dynamic-include.js"></script>
+  <script src="https://media.readthedocs.org/static/core/js/readthedocs-doc-embed.js"></script>
+
+  
+<script async type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="cleanflight" /><meta name="readthedocs-version-slug" content="stable" /><meta name="readthedocs-resolver-filename" content="/Gps/" /><meta name="readthedocs-http-status" content="200" /></head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> cleanflight</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../1wire/">1wire</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Battery/">Battery</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Blackbox/">Blackbox</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - AlienWii32/">Board   AlienWii32</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - CC3D/">Board   CC3D</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - CJMCU/">Board   CJMCU</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - ChebuzzF3/">Board   ChebuzzF3</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - ColibriRace/">Board   ColibriRace</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - MotoLab/">Board   MotoLab</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - Naze32/">Board   Naze32</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - Olimexino/">Board   Olimexino</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - Paris Air Hero 32/">Board   Paris Air Hero 32</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - RMDO/">Board   RMDO</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - SPRacingF3/">Board   SPRacingF3</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - SPRacingF3Mini/">Board   SPRacingF3Mini</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - Sparky/">Board   Sparky</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Boards/">Boards</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Buzzer/">Buzzer</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Cli/">Cli</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Configuration/">Configuration</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Controls/">Controls</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Display/">Display</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Failsafe/">Failsafe</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Getting Started/">Getting Started</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Gps</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#gps">GPS</a></li>
+                
+                    <li><a class="toctree-l4" href="#configuration">Configuration</a></li>
+                
+                    <li><a class="toctree-l4" href="#gps-receiver-configuration">GPS Receiver Configuration</a></li>
+                
+                    <li><a class="toctree-l4" href="#hardware">Hardware</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Gtune/">Gtune</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Inflight Adjustments/">Inflight Adjustments</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Installation/">Installation</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Introduction/">Introduction</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../LedStrip/">LedStrip</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Migrating from baseflight/">Migrating from baseflight</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Mixer/">Mixer</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Modes/">Modes</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Oneshot/">Oneshot</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../PID tuning/">PID tuning</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Profiles/">Profiles</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Rssi/">Rssi</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Rx/">Rx</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Safety/">Safety</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Serial/">Serial</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Sonar/">Sonar</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Spektrum bind/">Spektrum bind</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Telemetry/">Telemetry</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../USB Flashing/">USB Flashing</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>API</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../API/MSP_extensions/">MSP extensions</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Development</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Atomic Barrier/">Atomic Barrier</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Blackbox Internals/">Blackbox Internals</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Building Manual/">Building Manual</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Building in Eclipse/">Building in Eclipse</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Building in Mac OS X/">Building in Mac OS X</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Building in Ubuntu/">Building in Ubuntu</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Building in Windows/">Building in Windows</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Configuration Storage/">Configuration Storage</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Development/">Development</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Hardware Debugging in Eclipse/">Hardware Debugging in Eclipse</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Hardware Debugging/">Hardware Debugging</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/PID Internals/">PID Internals</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Travis/">Travis</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">cleanflight</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Gps</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="gps">GPS</h1>
+<p>GPS features in Cleanflight are experimental.  Please share your findings with the developers.</p>
+<p>GPS works best if the GPS receiver is mounted above and away from other sources of interference.</p>
+<p>The compass/mag sensor should be well away from sources of magnetic interference, e.g. keep it away from power wires, motors, ESCs.</p>
+<p>Two GPS protocols are supported. NMEA text and UBLOX binary.</p>
+<h2 id="configuration">Configuration</h2>
+<p>Enable the GPS from the CLI as follows:</p>
+<ol>
+<li><a href="../Serial/">configure a serial port to use for GPS.</a> </li>
+<li>set your GPS baud rate</li>
+<li>enable the <code>feature GPS</code></li>
+<li>set the <code>gps_provider</code></li>
+<li>connect your GPS to the serial port configured for GPS.</li>
+<li>save and reboot.</li>
+</ol>
+<p>Note:  GPS packet loss has been observed at 115200.  Try using 57600 if you experience this.</p>
+<p>For the connections step check the Board documentation for pins and port numbers.</p>
+<h3 id="gps-provider">GPS Provider</h3>
+<p>Set the <code>gps_provider</code> appropriately, for example <code>set gps_provider=UBLOX</code></p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NMEA</td>
+</tr>
+<tr>
+<td>UBLOX</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gps-auto-configuration">GPS Auto configuration</h3>
+<p>When using UBLOX it is a good idea to use GPS auto configuration so your FC gets the GPS messages it needs.</p>
+<p>Enable GPS auto configuration as follows <code>set gps_auto_config=ON</code>.</p>
+<p>If you are not using GPS auto configuration then ensure your GPS receiver sends out the correct messages at the right frequency.  See below for manual UBlox settings.</p>
+<h3 id="sbas">SBAS</h3>
+<p>When using a UBLOX GPS the SBAS mode can be configured using <code>gps_sbas_mode</code>.</p>
+<p>The default is AUTO.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Region</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AUTO</td>
+<td>Global</td>
+</tr>
+<tr>
+<td>EGNOS</td>
+<td>Europe</td>
+</tr>
+<tr>
+<td>WAAS</td>
+<td>North America</td>
+</tr>
+<tr>
+<td>MSAS</td>
+<td>Asia</td>
+</tr>
+<tr>
+<td>GAGAN</td>
+<td>India</td>
+</tr>
+</tbody>
+</table>
+<p>If you use a regional specific setting you may achieve a faster GPS lock than using AUTO.</p>
+<p>This setting only works when <code>gps_auto_config=ON</code></p>
+<h2 id="gps-receiver-configuration">GPS Receiver Configuration</h2>
+<p>UBlox GPS units can either be configured using the FC or manually.</p>
+<h3 id="ublox-gps-manual-configuration">UBlox GPS manual configuration</h3>
+<p>Use UBox U-Center and connect your GPS to your computer.  The CLI <code>gpspassthrough</code> command may be of use if you do not have a spare USART to USB adapter.</p>
+<p>Note that many boards will not provide +5V from USB to the GPS module, such as the SPRacingF3; if you are using <code>gpspassthrough</code> you may need to connect a BEC to the controller if your board permits it, or use a standalone UART adapter. Check your board documentation to see if your GPS port is powered from USB.</p>
+<p>Display the Packet Console (so you can see what messages your receiver is sending to your computer).</p>
+<p>Display the Configation View.</p>
+<p>Navigate to CFG (Configuration)</p>
+<p>Select <code>Revert to default configuration</code>.
+Click <code>Send</code>.</p>
+<p>At this point you might need to disconnect and reconnect at the default baudrate - probably 9600 baud.</p>
+<p>Navigate to PRT (Ports)</p>
+<p>Set <code>Target</code> to <code>1 - Uart 1</code>
+Set <code>Protocol In</code> to <code>0+1+2</code>
+Set <code>Protocol Out</code> to <code>0+1</code>
+Set <code>Buadrate</code> to <code>57600</code> <code>115200</code>
+Press <code>Send</code></p>
+<p>This will immediatly "break" communication to the GPS. Since you haven't saved the new baudrate setting to the non-volatile memory you need to change the baudrate you communicate to the GPS without resetting the GPS. So <code>Disconnect</code>, Change baud rate to match, then <code>Connect</code>. </p>
+<p>Click on <code>PRT</code> in the Configuration view again and inspect the packet console to make sure messages are being sent and acknowledged.</p>
+<p>Next, to ensure the FC doesn't waste time processing unneeded messages, click on <code>MSG</code> and enable the following on UART1 alone with a rate of 1. When changing message target and rates remember to click <code>Send</code> after changing each message.:</p>
+<pre><code>NAV-POSLLH
+NAV-DOP
+NAV-SOL
+NAV-VELNED
+NAV-TIMEUTC
+</code></pre>
+<p>Enable the following on UART1 with a rate of 5, to reduce bandwidth and load on the FC.</p>
+<pre><code>NAV-SVINFO
+</code></pre>
+<p>All other message types should be disabled.</p>
+<p>Next change the global update rate, click <code>Rate (Rates)</code> in the Configuration view.</p>
+<p>Set <code>Measurement period</code> to <code>100</code> ms.
+Set <code>Navigation rate</code> to <code>1</code>.
+Click <code>Send</code>.</p>
+<p>This will cause the GPS receive to send the require messages out 10 times a second.  If your GPS receiver cannot be set to use <code>100</code>ms try <code>200</code>ms (5hz) - this is less precise.</p>
+<p>Next change the mode, click <code>NAV5 (Navigation 5)</code> in the Configuration View.</p>
+<p>Set to <code>Dynamic Model</code> to <code>Pedestrian</code> and click <code>Send</code>.</p>
+<p>Next change the SBAS settings.  Click <code>SBAS (SBAS Settings)</code> in the Configuration View.</p>
+<p>Set <code>Subsystem</code> to <code>Enabled</code>.
+Set <code>PRN Codes</code> to <code>Auto-Scan</code>.
+Click <code>Send</code>.</p>
+<p>Finally, we need to save the configuration.</p>
+<p>Click <code>CFG (Configuration</code> in the Configuration View.</p>
+<p>Select <code>Save current configuration</code> and click <code>Send</code>.</p>
+<h3 id="ublox-navigation-model">UBlox Navigation model</h3>
+<p>Cleanflight will use <code>Pedestrian</code> when gps auto config is used.</p>
+<p>From the UBlox documentation:</p>
+<ul>
+<li>Pedestrian - Applications with low acceleration and speed, e.g. how a pedestrian would move. Low acceleration assumed. MAX Altitude [m]: 9000, MAX Velocity [m/s]: 30, MAX Vertical, Velocity [m/s]: 20, Sanity check type: Altitude and Velocity, Max Position Deviation: Small.</li>
+<li>Portable - Applications with low acceleration, e.g. portable devices. Suitable for most situations. MAX Altitude [m]: 12000, MAX Velocity [m/s]: 310, MAX Vertical Velocity [m/s]: 50, Sanity check type: Altitude and Velocity, Max Position Deviation: Medium.</li>
+<li>Airborne &lt; 1G - Used for applications with a higher dynamic range and vertical acceleration than a passenger car. No 2D position fixes supported. MAX Altitude [m]: 50000, MAX Velocity [m/s]: 100, MAX Vertical Velocity [m/s]: 100, Sanity check type: Altitude, Max Position Deviation: Large</li>
+</ul>
+<h2 id="hardware">Hardware</h2>
+<p>There are many GPS receivers available on the market. 
+Below are some examples of user-tested hardware. </p>
+<h3 id="ublox">Ublox</h3>
+<h3 id="u-blox">U-Blox</h3>
+<h4 id="neo-m8">NEO-M8</h4>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>U-blox Neo-M8N w/Compass</td>
+<td>Pinout can be found in Pixfalcon manual. SDA and SCL can be attached to I2C bus for compass, TX and RX can be attached to UART for GPS. Power must be applied for either to function.</td>
+</tr>
+<tr>
+<td>Reyax RY825AI</td>
+<td>NEO-M8N, 18Hz UART USB interface GPS Glonass BeiDou QZSS antenna module flash. <a href="http://www.ebay.com/itm/RY825AI-18Hz-UART-USB-interface-GPS-Glonass-BeiDou-QZSS-antenna-module-flash/181566850426">eBay</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="neo-7">NEO-7</h4>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>U-blox Neo-7M w/Compass</td>
+<td><a href="http://www.hobbyking.com/hobbyking/store/__55558__Ublox_Neo_7M_GPS_with_Compass_and_Pedestal_Mount.html">HobbyKing</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="neo-6">NEO-6</h4>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ublox NEO-6M GPS with Compass</td>
+<td><a href="http://www.ebay.com/itm/111585855757">eBay</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="serial-nmea">Serial NMEA</h3>
+<h4 id="mediatek">MediaTek</h4>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MTK 3329</td>
+<td>Tested on hardware serial at 115200 baud (default) and on softserial at 19200 baud. The baudrate and refresh rate can be adjusted using the MiniGPS software (recommended if you lower the baudrate). The software will estimate the percentage of UART bandwidth used for your chosen baudrate and update rate.</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Gtune/" class="btn btn-neutral float-right" title="Gtune">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Getting Started/" class="btn btn-neutral" title="Getting Started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  
+
+</body>
+</html>

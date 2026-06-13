@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Failsafe - cleanflight</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="https://media.readthedocs.org/css/badge_only.css" rel="stylesheet">
+  <link href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Failsafe";
+    var mkdocs_page_input_path = "Failsafe.md";
+    var mkdocs_page_url = "/Failsafe/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+  <script src="../readthedocs-data.js"></script>
+  <script src="../readthedocs-dynamic-include.js"></script>
+  <script src="https://media.readthedocs.org/static/core/js/readthedocs-doc-embed.js"></script>
+
+  
+<script async type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="cleanflight" /><meta name="readthedocs-version-slug" content="stable" /><meta name="readthedocs-resolver-filename" content="/Failsafe/" /><meta name="readthedocs-http-status" content="200" /></head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> cleanflight</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../1wire/">1wire</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Battery/">Battery</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Blackbox/">Blackbox</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - AlienWii32/">Board   AlienWii32</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - CC3D/">Board   CC3D</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - CJMCU/">Board   CJMCU</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - ChebuzzF3/">Board   ChebuzzF3</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - ColibriRace/">Board   ColibriRace</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - MotoLab/">Board   MotoLab</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - Naze32/">Board   Naze32</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - Olimexino/">Board   Olimexino</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - Paris Air Hero 32/">Board   Paris Air Hero 32</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - RMDO/">Board   RMDO</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - SPRacingF3/">Board   SPRacingF3</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - SPRacingF3Mini/">Board   SPRacingF3Mini</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - Sparky/">Board   Sparky</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Boards/">Boards</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Buzzer/">Buzzer</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Cli/">Cli</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Configuration/">Configuration</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Controls/">Controls</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Display/">Display</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Failsafe</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#failsafe">Failsafe</a></li>
+                
+                    <li><a class="toctree-l4" href="#flight-controller-failsafe-system">Flight controller failsafe system</a></li>
+                
+                    <li><a class="toctree-l4" href="#configuration">Configuration</a></li>
+                
+                    <li><a class="toctree-l4" href="#failsafe-settings">Failsafe Settings</a></li>
+                
+                    <li><a class="toctree-l4" href="#testing">Testing</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Getting Started/">Getting Started</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Gps/">Gps</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Gtune/">Gtune</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Inflight Adjustments/">Inflight Adjustments</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Installation/">Installation</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Introduction/">Introduction</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../LedStrip/">LedStrip</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Migrating from baseflight/">Migrating from baseflight</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Mixer/">Mixer</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Modes/">Modes</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Oneshot/">Oneshot</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../PID tuning/">PID tuning</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Profiles/">Profiles</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Rssi/">Rssi</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Rx/">Rx</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Safety/">Safety</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Serial/">Serial</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Sonar/">Sonar</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Spektrum bind/">Spektrum bind</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Telemetry/">Telemetry</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../USB Flashing/">USB Flashing</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>API</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../API/MSP_extensions/">MSP extensions</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Development</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Atomic Barrier/">Atomic Barrier</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Blackbox Internals/">Blackbox Internals</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Building Manual/">Building Manual</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Building in Eclipse/">Building in Eclipse</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Building in Mac OS X/">Building in Mac OS X</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Building in Ubuntu/">Building in Ubuntu</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Building in Windows/">Building in Windows</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Configuration Storage/">Configuration Storage</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Development/">Development</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Hardware Debugging in Eclipse/">Hardware Debugging in Eclipse</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Hardware Debugging/">Hardware Debugging</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/PID Internals/">PID Internals</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Travis/">Travis</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">cleanflight</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Failsafe</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="failsafe">Failsafe</h1>
+<p>There are two types of failsafe:</p>
+<ol>
+<li>Receiver based failsafe</li>
+<li>Flight controller based failsafe</li>
+</ol>
+<p>Receiver based failsafe is where you, from your transmitter and receiver, configure channels to output desired signals if your receiver detects signal loss and goes to the <strong>failsafe mode</strong>. The idea is that you set throttle and other controls so the aircraft descends in a controlled manner.  See your receiver's documentation for this method.</p>
+<p>Flight controller based failsafe is where the flight controller attempts to detect signal loss and/or the <strong>failsafe mode</strong> of your receiver and upon detection goes to <strong>failsafe stage 1</strong>. The idea is that the flight controller starts using <strong>fallback settings</strong> for all controls, which are set by you, using the CLI command <code>rxfail</code> (see <a href="../Rx/#rx-loss-configuration">rxfail</a> section in rx documentation) or the cleanflight-configurator GUI.</p>
+<p>It is possible to use both types at the same time, which may be desirable.  Flight controller failsafe can even help if your receiver signal wires come loose, get damaged or your receiver malfunctions in a way the receiver itself cannot detect.</p>
+<p>Alternatively you may configure a transmitter switch to activate failsafe mode. This is useful for fieldtesting the failsafe system and as a <strong><em><code>PANIC</code></em></strong> switch when you lose orientation.</p>
+<h2 id="flight-controller-failsafe-system">Flight controller failsafe system</h2>
+<p>This system has two stages.</p>
+<p><strong>Stage 1</strong> is entered when <strong>a flightchannel</strong> has an <strong><em>invalid pulse length</em></strong>, the receiver reports <strong><em>failsafe mode</em></strong> or there is <strong><em>no signal</em></strong> from the receiver. Fallback settings are applied to <strong><em>all channels</em></strong> and a short amount of time is provided to allow for recovery.</p>
+<p><strong>Note:</strong> Prior to entering <strong>stage 1</strong>, fallback settings are also applied to <strong><em>individual AUX channels</em></strong> that have invalid pulses.</p>
+<p><strong>Stage 2</strong> is entered when your craft is <strong>armed</strong> and <strong>stage 1</strong> persists longer then the configured guard time (<code>failsafe_delay</code>). All channels will remain at the applied fallback setting unless overruled by the chosen stage 2 procedure (<code>failsafe_procedure</code>).</p>
+<p><strong>Stage 2</strong> is not activated until 5 seconds after the flight controller boots up.  This is to prevent unwanted activation, as in the case of TX/RX gear with long bind procedures, before the RX sends out valid data.</p>
+<p><strong>Stage 2</strong> can also directly be activated when a transmitter switch that is configured to control the failsafe mode is switched ON (and <code>failsafe_kill_switch</code> is set to OFF).</p>
+<p><strong>Stage 2</strong> will be aborted when it was due to:</p>
+<ul>
+<li>a lost RC signal and the RC signal has recovered.</li>
+<li>a transmitter failsafe switch was set to ON position and the switch is set to OFF position (and <code>failsafe_kill_switch</code> is set to OFF).</li>
+</ul>
+<p>Note that:
+* At the end of the stage 2 procedure, the flight controller will be disarmed and re-arming will be locked until the signal from the receiver is restored for 30 seconds AND the arming switch is in the OFF position (when an arm switch is in use).</p>
+<ul>
+<li>
+<p>When <code>failsafe_kill_switch</code> is set to ON and the rc switch configured for failsafe is set to ON, the craft is instantly disarmed. Re-arming is possible when the signal from the receiver has restored for at least 3 seconds AND the arming switch is in the OFF position (when one is in use). Similar effect can be achieved by setting 'failsafe_throttle' to 1000 and 'failsafe_off_delay' to 0. This is not the prefered method, since the reaction is slower and re-arming will be locked.</p>
+</li>
+<li>
+<p>Prior to starting a stage 2 intervention it is checked if the throttle position was below <code>min_throttle</code> level for the last <code>failsafe_throttle_low_delay</code> seconds. If it was, the craft is assumed to be on the ground and is only disarmed. It may be re-armed without a power cycle.     </p>
+</li>
+</ul>
+<p>Some notes about <strong>SAFETY</strong>:
+<em> The failsafe system will be activated regardless of current throttle position. So when the failsafe intervention is aborted (RC signal restored/failsafe switch set to OFF) the current stick position will direct the craft !
+</em> The craft may already be on the ground with motors stopped and that motors and props could spin again - the software does not currently detect if the craft is on the ground.  Take care when using <code>MOTOR_STOP</code> feature. <strong>Props will spin up without warning</strong>, when armed with <code>MOTOR_STOP</code> feature ON (props are not spinning) <strong><em>and</em></strong> failsafe is activated !</p>
+<h2 id="configuration">Configuration</h2>
+<p>When configuring the flight controller failsafe, use the following steps:</p>
+<ol>
+<li>
+<p>Configure your receiver to do one of the following:</p>
+</li>
+<li>
+<p>Upon signal loss, send no signal/pulses over the channels</p>
+</li>
+<li>Send an invalid signal over the channels (for example, send values lower than <code>rx_min_usec</code>)</li>
+</ol>
+<p>and</p>
+<ul>
+<li>Ensure your receiver does not send out channel data that would cause a disarm by switch or sticks to be registered by the FC. This is especially important for those using a switch to arm.</li>
+</ul>
+<p>See your receiver's documentation for direction on how to accomplish one of these.</p>
+<ul>
+<li>
+<p>Configure one of the transmitter switches to activate the failsafe mode.</p>
+</li>
+<li>
+<p>Set <code>failsafe_off_delay</code> to an appropriate value based on how high you fly</p>
+</li>
+<li>
+<p>Set <code>failsafe_throttle</code> to a value that allows the aircraft to descend at approximately one meter per second (default is 1000 which should be throttle off).</p>
+</li>
+</ul>
+<p>These are the basic steps for flight controller failsafe configuration; see Failsafe Settings below for additional settings that may be changed.</p>
+<h2 id="failsafe-settings">Failsafe Settings</h2>
+<p>Failsafe delays are configured in 0.1 second steps.</p>
+<p>1 step = 0.1sec</p>
+<p>1 second = 10 steps</p>
+<h3 id="failsafe_delay"><code>failsafe_delay</code></h3>
+<p>Guard time for failsafe activation after signal lost.  This is the amount of time the flight controller waits to see if it begins receiving a valid signal again before activating failsafe.</p>
+<h3 id="failsafe_off_delay"><code>failsafe_off_delay</code></h3>
+<p>Delay after failsafe activates before motors finally turn off.  This is the amount of time 'failsafe_throttle' is active.  If you fly at higher altitudes you may need more time to descend safely.</p>
+<h3 id="failsafe_throttle"><code>failsafe_throttle</code></h3>
+<p>Throttle level used for landing.  Specify a value that causes the aircraft to descend at about 1M/sec. Default is set to 1000 which should correspond to throttle off.</p>
+<h3 id="failsafe_kill_switch"><code>failsafe_kill_switch</code></h3>
+<p>Configure the rc switched failsafe action: the same action as when the rc link is lost (set to OFF) or disarms instantly (set to ON). Also see above.</p>
+<h3 id="failsafe_throttle_low_delay"><code>failsafe_throttle_low_delay</code></h3>
+<p>Time throttle level must have been below 'min_throttle' to <em>only disarm</em> instead of <em>full failsafe procedure</em>.</p>
+<p>Use standard RX usec values.  See <a href="../Rx/">Rx documentation</a>.</p>
+<h3 id="failsafe_procedure"><code>failsafe_procedure</code></h3>
+<ul>
+<li><strong>Drop:</strong> Just kill the motors and disarm (crash the craft).</li>
+<li><strong>Land:</strong> Enable an auto-level mode, center the flight sticks and set the throttle to a predefined value (<code>failsafe_throttle</code>) for a predefined time (<code>failsafe_off_delay</code>). This should allow the craft to come to a safer landing.</li>
+</ul>
+<h3 id="rx_min_usec"><code>rx_min_usec</code></h3>
+<p>The lowest channel value considered valid.  e.g. PWM/PPM pulse length </p>
+<h3 id="rx_max_usec"><code>rx_max_usec</code></h3>
+<p>The highest channel value considered valid.  e.g. PWM/PPM pulse length </p>
+<p>The <code>rx_min_usec</code> and <code>rx_max_usec</code> settings helps detect when your RX stops sending any data, enters failsafe mode or when the RX looses signal.</p>
+<p>With a Graupner GR-24 configured for PWM output with failsafe on channels 1-4 set to OFF in the receiver settings then this setting, at its default value, will allow failsafe to be activated.</p>
+<h2 id="testing">Testing</h2>
+<p><strong>Bench test the failsafe system before flying - <em>remove props while doing so</em>.</strong></p>
+<ol>
+<li>Arm the craft.</li>
+<li>Turn off transmitter or unplug RX.</li>
+<li>Observe motors spin at configured throttle setting for configured duration.</li>
+<li>Observe motors turn off after configured duration.</li>
+<li>Ensure that when you turn on your TX again or reconnect the RX that you cannot re-arm once the motors have stopped.</li>
+<li>Power cycle the FC.</li>
+<li>Arm the craft.</li>
+<li>Turn off transmitter or unplug RX.</li>
+<li>Observe motors spin at configured throttle setting for configured duration.</li>
+<li>Turn on TX or reconnect RX.</li>
+<li>Ensure that your switch positions don't now cause the craft to disarm (otherwise it would fall out of the sky on regained signal).</li>
+<li>Observe that normal flight behavior is resumed.</li>
+<li>Disarm.</li>
+</ol>
+<p><strong>Field test the failsafe system.</strong></p>
+<ol>
+<li>Perform bench testing first!</li>
+<li>On a calm day go to an unpopulated area away from buildings or test indoors in a safe controlled environment - e.g. inside a big net.</li>
+<li>Arm the craft.</li>
+<li>Hover over something soft (long grass, ferns, heather, foam, etc.).</li>
+<li>Descend the craft and observe throttle position and record throttle value from your TX channel monitor.  Ideally 1500 should be hover. So your value should be less than 1500.</li>
+<li>Stop, disarm.</li>
+<li>Set failsafe throttle to the recorded value.</li>
+<li>Arm, hover over something soft again.</li>
+<li>Turn off TX (!)</li>
+<li>Observe craft descends and motors continue to spin for the configured duration.</li>
+<li>Observe FC disarms after the configured duration.</li>
+<li>Remove flight battery.</li>
+</ol>
+<p>If craft descends too quickly then increase failsafe throttle setting.</p>
+<p>Ensure that the duration is long enough for your craft to land at the altitudes you normally fly at.</p>
+<p>Using a configured transmitter switch to activate failsafe mode, instead of switching off your TX, is good primary testing method in addition to the above procedure.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Getting Started/" class="btn btn-neutral float-right" title="Getting Started">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Display/" class="btn btn-neutral" title="Display"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  
+
+</body>
+</html>

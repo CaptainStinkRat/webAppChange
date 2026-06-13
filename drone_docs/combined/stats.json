@@ -1,0 +1,44 @@
+{
+  "total_parameters": 6988,
+  "total_documentation_pages": 81,
+  "total_training_entries": 7069,
+  "configurators": {
+    "betaflight": {
+      "parameters": 289,
+      "documentation": 9
+    },
+    "ardupilot": {
+      "parameters": 4827,
+      "documentation": 7
+    },
+    "px4": {
+      "parameters": 1872,
+      "documentation": 12
+    },
+    "inav": {
+      "parameters": 0,
+      "documentation": 30
+    },
+    "qgroundcontrol": {
+      "parameters": 0,
+      "documentation": 12
+    },
+    "cleanflight": {
+      "parameters": 0,
+      "documentation": 11
+    }
+  },
+  "categories": {
+    "CLI": 289,
+    "ArduCopter": 385,
+    "ArduPlane": 370,
+    "Rover": 369,
+    "ArduSub": 387,
+    "AntennaTracker": 260,
+    "Blimp": 235,
+    "Heli": 2821,
+    "Standard": 1454,
+    "Developer": 7,
+    "System": 411
+  }
+}

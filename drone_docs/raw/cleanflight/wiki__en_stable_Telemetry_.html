@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Telemetry - cleanflight</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="https://media.readthedocs.org/css/badge_only.css" rel="stylesheet">
+  <link href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Telemetry";
+    var mkdocs_page_input_path = "Telemetry.md";
+    var mkdocs_page_url = "/Telemetry/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+  <script src="../readthedocs-data.js"></script>
+  <script src="../readthedocs-dynamic-include.js"></script>
+  <script src="https://media.readthedocs.org/static/core/js/readthedocs-doc-embed.js"></script>
+
+  
+<script async type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="cleanflight" /><meta name="readthedocs-version-slug" content="stable" /><meta name="readthedocs-resolver-filename" content="/Telemetry/" /><meta name="readthedocs-http-status" content="200" /></head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> cleanflight</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../1wire/">1wire</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Battery/">Battery</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Blackbox/">Blackbox</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - AlienWii32/">Board   AlienWii32</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - CC3D/">Board   CC3D</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - CJMCU/">Board   CJMCU</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - ChebuzzF3/">Board   ChebuzzF3</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - ColibriRace/">Board   ColibriRace</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - MotoLab/">Board   MotoLab</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - Naze32/">Board   Naze32</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - Olimexino/">Board   Olimexino</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - Paris Air Hero 32/">Board   Paris Air Hero 32</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - RMDO/">Board   RMDO</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - SPRacingF3/">Board   SPRacingF3</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - SPRacingF3Mini/">Board   SPRacingF3Mini</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - Sparky/">Board   Sparky</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Boards/">Boards</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Buzzer/">Buzzer</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Cli/">Cli</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Configuration/">Configuration</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Controls/">Controls</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Display/">Display</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Failsafe/">Failsafe</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Getting Started/">Getting Started</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Gps/">Gps</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Gtune/">Gtune</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Inflight Adjustments/">Inflight Adjustments</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Installation/">Installation</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Introduction/">Introduction</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../LedStrip/">LedStrip</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Migrating from baseflight/">Migrating from baseflight</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Mixer/">Mixer</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Modes/">Modes</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Oneshot/">Oneshot</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../PID tuning/">PID tuning</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Profiles/">Profiles</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Rssi/">Rssi</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Rx/">Rx</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Safety/">Safety</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Serial/">Serial</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Sonar/">Sonar</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Spektrum bind/">Spektrum bind</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Telemetry</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#telemetry">Telemetry</a></li>
+                
+                    <li><a class="toctree-l4" href="#frsky-telemetry">FrSky telemetry</a></li>
+                
+                    <li><a class="toctree-l4" href="#hott-telemetry">HoTT telemetry</a></li>
+                
+                    <li><a class="toctree-l4" href="#lighttelemetry-ltm">LightTelemetry (LTM)</a></li>
+                
+                    <li><a class="toctree-l4" href="#smartport-sport">SmartPort (S.Port)</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../USB Flashing/">USB Flashing</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>API</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../API/MSP_extensions/">MSP extensions</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Development</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Atomic Barrier/">Atomic Barrier</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Blackbox Internals/">Blackbox Internals</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Building Manual/">Building Manual</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Building in Eclipse/">Building in Eclipse</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Building in Mac OS X/">Building in Mac OS X</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Building in Ubuntu/">Building in Ubuntu</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Building in Windows/">Building in Windows</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Configuration Storage/">Configuration Storage</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Development/">Development</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Hardware Debugging in Eclipse/">Hardware Debugging in Eclipse</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Hardware Debugging/">Hardware Debugging</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/PID Internals/">PID Internals</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Travis/">Travis</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">cleanflight</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Telemetry</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="telemetry">Telemetry</h1>
+<p>Telemetry allows you to know what is happening on your aircraft while you are flying it.  Among other things you can receive battery voltages and GPS positions on your transmitter.</p>
+<p>Telemetry can be either always on, or enabled when armed.  If a serial port for telemetry is shared with other functionality then then telemetry will only be enabled when armed on that port.</p>
+<p>Telemetry is enabled using the 'TELEMETRY` feature.</p>
+<pre><code>feature TELEMETRY
+</code></pre>
+
+<p>Multiple telemetry providers are currently supported, FrSky, Graupner
+HoTT V4, SmartPort (S.Port) and LightTelemetry (LTM)</p>
+<p>All telemetry systems use serial ports, configure serial ports to use the telemetry system required.</p>
+<h2 id="frsky-telemetry">FrSky telemetry</h2>
+<p>FrSky telemetry is transmit only and just requires a single connection from the TX pin of a serial port to the RX pin on an FrSky telemetry receiver.</p>
+<p>FrSky telemetry signals are inverted.  To connect a cleanflight capable board to an FrSKy receiver you have some options.</p>
+<ol>
+<li>A hardware inverter - Built in to some flight controllers.</li>
+<li>Use software serial and enable frsky_inversion.</li>
+<li>Use a flight controller that has software configurable hardware inversion (e.g. STM32F30x).</li>
+</ol>
+<p>For 1, just connect your inverter to a usart or software serial port.</p>
+<p>For 2 and 3 use the CLI command as follows:</p>
+<pre><code>set telemetry_inversion = ON
+</code></pre>
+
+<h3 id="available-sensors">Available sensors</h3>
+<p>The following sensors are transmitted :</p>
+<p>Vspd : vertical speed, unit is cm/s.</p>
+<p>Hdg : heading, North is 0°, South is 180°.</p>
+<p>AccX,Y,Z : accelerometers values.</p>
+<p>Tmp1 : baro temp if available, gyro otherwise.</p>
+<p>RPM : if armed : throttle value, battery capacity otherwise. (Blade number needs to be set to 12 in Taranis).</p>
+<p>Cels : average cell value, vbat divided by cell number.</p>
+<p>VFAS : actual vbat value (see VFAS precision section bellow).</p>
+<p>Curr : actual current comsuption, in amp.</p>
+<p>Fuel : if capacity set :remaining battery percentage, mah drawn otherwise.</p>
+<p>GPS : GPS coordinates.</p>
+<p>Alt : barometer based altitude, init level is zero.</p>
+<p>Date : time since powered.</p>
+<p>GSpd : current speed, calculated by GPS.</p>
+<p>GAlt : GPS altitude, sea level is zero.</p>
+<p>Tmp2 : number of sats. Every second, a number &gt; 100 is sent to represent GPS signal quality.</p>
+<h3 id="precision-setting-for-vfas">Precision setting for VFAS</h3>
+<p>Cleanflight can send VFAS (FrSky Ampere Sensor Voltage) in two ways:</p>
+<pre><code>set frsky_vfas_precision  = 0
+</code></pre>
+
+<p>This is default setting which supports VFAS resolution of 0.2 volts and is supported on all FrSky hardware.</p>
+<pre><code>set frsky_vfas_precision  = 1
+</code></pre>
+
+<p>This is new setting which supports VFAS resolution of 0.1 volts and is only supported by OpenTX radios (this method uses custom ID 0x39).</p>
+<h2 id="hott-telemetry">HoTT telemetry</h2>
+<p>Only Electric Air Modules and GPS Modules are emulated.</p>
+<p>Use the latest Graupner firmware for your transmitter and receiver.</p>
+<p>Older HoTT transmitters required the EAM and GPS modules to be enabled in the telemetry menu of the transmitter. (e.g. on MX-20)</p>
+<p>Serial ports use two wires but HoTT uses a single wire so some electronics are required so that the signals don't get mixed up.  The TX and RX pins of
+a serial port should be connected using a diode and a single wire to the <code>T</code> port on a HoTT receiver.</p>
+<p>Connect as follows:</p>
+<ul>
+<li>HoTT TX/RX <code>T</code> -&gt; Serial RX (connect directly)</li>
+<li>HoTT TX/RX <code>T</code> -&gt; Diode <code>-(  |)-</code> &gt; Serial TX (connect via diode)</li>
+</ul>
+<p>The diode should be arranged to allow the data signals to flow the right way</p>
+<pre><code>-(  |)- == Diode, | indicates cathode marker.
+</code></pre>
+
+<p>1N4148 diodes have been tested and work with the GR-24.</p>
+<p>As noticed by Skrebber the GR-12 (and probably GR-16/24, too) are based on a PIC 24FJ64GA-002, which has 5V tolerant digital pins.</p>
+<p>Note: The SoftSerial ports may not be 5V tolerant on your board.  Verify if you require a 5v/3.3v level shifters.</p>
+<h2 id="lighttelemetry-ltm">LightTelemetry (LTM)</h2>
+<p>LTM is a lightweight streaming telemetry protocol supported by a
+number of OSDs, ground stations and antenna trackers.</p>
+<p>The Cleanflight implementation of LTM implements the following frames:</p>
+<ul>
+<li>G-FRAME: GPS information (lat, long, ground speed, altitude, sat
+  info)</li>
+<li>A-FRAME: Attitude (pitch, roll, heading)</li>
+<li>S-FRAME: Status (voltage, current+, RSSI, airspeed+, status). Item
+  suffixed '+' not implemented in Cleanflight.</li>
+<li>O-FRAME: Origin (home position, lat, long, altitude, fix)</li>
+</ul>
+<p>In addition, in the inav (navigation-rewrite) fork:
+* N-FRAME: Navigation information (GPS mode, Nav mode, Nav action,
+  Waypoint number, Nav Error, Nav Flags).</p>
+<p>LTM is transmit only, and can work at any supported baud rate. It is
+designed to operate over 2400 baud (9600 in Cleanflight) and does not
+benefit from higher rates. It is thus usable on soft serial.</p>
+<p>More information about the fields, encoding and enumerations may be
+found at
+https://github.com/stronnag/mwptools/blob/master/docs/ltm-definition.txt</p>
+<h2 id="smartport-sport">SmartPort (S.Port)</h2>
+<p>Smartport is a telemetry system used by newer FrSky transmitters and receivers such as the Taranis/XJR and X8R, X6R and X4R(SB).</p>
+<p>More information about the implementation can be found here: https://github.com/frank26080115/cleanflight/wiki/Using-Smart-Port</p>
+<h3 id="available-sensors_1">Available sensors</h3>
+<p>The following sensors are transmitted :</p>
+<p>Alt : barometer based altitude, init level is zero.</p>
+<p>Vspd : vertical speed, unit is cm/s.</p>
+<p>Hdg : heading, North is 0°, South is 180°.</p>
+<p>AccX,Y,Z : accelerometers values.</p>
+<p>Tmp1 : actual flight mode, sent as 4 digits. Number is sent as (1)1234. Please ignore the leading 1, it is just there to ensure the number as always 5 digits (the 1 + 4 digits of actual data) the numbers are aditives (for example, if first digit after the leading 1 is 6, it means GPS Home and Headfree are both active) :</p>
+<ol>
+<li>1 is GPS Hold, 2 is GPS Home, 4 is Headfree</li>
+<li>1 is mag enabled, 2 is baro enabled, 4 is sonar enabled</li>
+<li>1 is angle, 2 is horizon, 4 is passthrough</li>
+<li>1 is ok to arm, 2 is arming is prevented,  4 is armed</li>
+</ol>
+<p>Tmp2 : GPS lock status, Number is sent as 1234, the numbers are aditives :</p>
+<ol>
+<li>1 is GPS Fix, 2 is GPS Home fix</li>
+<li>not used</li>
+<li>not used</li>
+<li>number of sats</li>
+</ol>
+<p>VFAS : actual vbat value.</p>
+<p>GAlt : GPS altitude, sea level is zero.</p>
+<p>GSpd : current speed, calculated by GPS.</p>
+<p>GPS : GPS coordinates.</p>
+<h3 id="smartport-on-f3-targets-with-hardware-uart">SmartPort on F3 targets with hardware UART</h3>
+<p>Smartport devices can be connected directly to STM32F3 boards such as the SPRacingF3 and Sparky, with a single straight through cable without the need for any hardware modifications on the FC or the receiver. Connect the TX PIN of the UART to the Smartport signal pin.</p>
+<p>For Smartport on F3 based boards, enable the telemetry inversion setting.</p>
+<pre><code>set telemetry_inversion = ON
+</code></pre>
+
+<h3 id="smartport-on-f1-and-f3-targets-with-softserial">SmartPort on F1 and F3 targets with SoftSerial</h3>
+<p>Since F1 targets like Naze32 or Flip32 are not equipped with hardware inverters, SoftSerial might be simpler to use. </p>
+<ol>
+<li>Enable SoftSerial <code>feature SOFTSERIAL</code></li>
+<li>In Configurator assign <em>Telemetry</em> &gt; <em>Smartport</em> &gt; <em>Auto</em> to SoftSerial port of your choice</li>
+<li>Enable Telemetry <code>feature TELEMETRY</code></li>
+<li>Confirm telemetry invesion <code>set telemetry_inversion = ON</code></li>
+<li>You have to bridge TX and RX lines of SoftSerial and connect them together to S.Port signal line in receiver</li>
+</ol>
+<p>Notes:</p>
+<ul>
+<li>This has been tested with Flip32 and SPracingF3 boards and FrSky X8R and X4R receivers</li>
+<li>To discover all sensors board has to be armed, and when GPS is connected, it needs to have a proper 3D fix. When not armed, values like <strong><em>Vfas</em></strong> or GPS coordinates may not sent.</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../USB Flashing/" class="btn btn-neutral float-right" title="USB Flashing">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Spektrum bind/" class="btn btn-neutral" title="Spektrum bind"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  
+
+</body>
+</html>

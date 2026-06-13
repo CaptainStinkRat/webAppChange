@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Modes - cleanflight</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="https://media.readthedocs.org/css/badge_only.css" rel="stylesheet">
+  <link href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Modes";
+    var mkdocs_page_input_path = "Modes.md";
+    var mkdocs_page_url = "/Modes/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+  <script src="../readthedocs-data.js"></script>
+  <script src="../readthedocs-dynamic-include.js"></script>
+  <script src="https://media.readthedocs.org/static/core/js/readthedocs-doc-embed.js"></script>
+
+  
+<script async type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="cleanflight" /><meta name="readthedocs-version-slug" content="stable" /><meta name="readthedocs-resolver-filename" content="/Modes/" /><meta name="readthedocs-http-status" content="200" /></head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> cleanflight</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../1wire/">1wire</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Battery/">Battery</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Blackbox/">Blackbox</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - AlienWii32/">Board   AlienWii32</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - CC3D/">Board   CC3D</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - CJMCU/">Board   CJMCU</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - ChebuzzF3/">Board   ChebuzzF3</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - ColibriRace/">Board   ColibriRace</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - MotoLab/">Board   MotoLab</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - Naze32/">Board   Naze32</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - Olimexino/">Board   Olimexino</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - Paris Air Hero 32/">Board   Paris Air Hero 32</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - RMDO/">Board   RMDO</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - SPRacingF3/">Board   SPRacingF3</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - SPRacingF3Mini/">Board   SPRacingF3Mini</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - Sparky/">Board   Sparky</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Boards/">Boards</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Buzzer/">Buzzer</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Cli/">Cli</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Configuration/">Configuration</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Controls/">Controls</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Display/">Display</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Failsafe/">Failsafe</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Getting Started/">Getting Started</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Gps/">Gps</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Gtune/">Gtune</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Inflight Adjustments/">Inflight Adjustments</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Installation/">Installation</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Introduction/">Introduction</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../LedStrip/">LedStrip</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Migrating from baseflight/">Migrating from baseflight</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Mixer/">Mixer</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Modes</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#modes">Modes</a></li>
+                
+                    <li><a class="toctree-l4" href="#mode-details">Mode details</a></li>
+                
+                    <li><a class="toctree-l4" href="#airmode">Airmode</a></li>
+                
+                    <li><a class="toctree-l4" href="#auxillary-configuration">Auxillary Configuration</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Oneshot/">Oneshot</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../PID tuning/">PID tuning</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Profiles/">Profiles</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Rssi/">Rssi</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Rx/">Rx</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Safety/">Safety</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Serial/">Serial</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Sonar/">Sonar</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Spektrum bind/">Spektrum bind</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Telemetry/">Telemetry</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../USB Flashing/">USB Flashing</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>API</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../API/MSP_extensions/">MSP extensions</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Development</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Atomic Barrier/">Atomic Barrier</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Blackbox Internals/">Blackbox Internals</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Building Manual/">Building Manual</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Building in Eclipse/">Building in Eclipse</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Building in Mac OS X/">Building in Mac OS X</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Building in Ubuntu/">Building in Ubuntu</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Building in Windows/">Building in Windows</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Configuration Storage/">Configuration Storage</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Development/">Development</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Hardware Debugging in Eclipse/">Hardware Debugging in Eclipse</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Hardware Debugging/">Hardware Debugging</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/PID Internals/">PID Internals</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Travis/">Travis</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">cleanflight</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Modes</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="modes">Modes</h1>
+<p>Cleanflight has various modes that can be toggled on or off.  Modes can be enabled/disabled by stick positions,
+auxillary receiver channels and other events such as failsafe detection.</p>
+<table>
+<thead>
+<tr>
+<th>MSP ID</th>
+<th>CLI ID</th>
+<th>Short Name</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>ARM</td>
+<td>Enables motors and flight stabilisation</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>ANGLE</td>
+<td>Legacy auto-level flight mode</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2</td>
+<td>HORIZON</td>
+<td>Auto-level flight mode</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>BARO</td>
+<td>Altitude hold mode (Requires barometer sensor)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>N/A</td>
+<td>VARIO</td>
+<td>Unused</td>
+</tr>
+<tr>
+<td>5</td>
+<td>4</td>
+<td>MAG</td>
+<td>Heading lock</td>
+</tr>
+<tr>
+<td>6</td>
+<td>5</td>
+<td>HEADFREE</td>
+<td>Head Free - When enabled yaw has no effect on pitch/roll inputs</td>
+</tr>
+<tr>
+<td>7</td>
+<td>6</td>
+<td>HEADADJ</td>
+<td>Heading Adjust - Sets a new yaw origin for HEADFREE mode</td>
+</tr>
+<tr>
+<td>8</td>
+<td>7</td>
+<td>CAMSTAB</td>
+<td>Camera Stabilisation</td>
+</tr>
+<tr>
+<td>9</td>
+<td>8</td>
+<td>CAMTRIG</td>
+<td>Unused</td>
+</tr>
+<tr>
+<td>10</td>
+<td>9</td>
+<td>GPSHOME</td>
+<td>Autonomous flight to HOME position</td>
+</tr>
+<tr>
+<td>11</td>
+<td>10</td>
+<td>GPSHOLD</td>
+<td>Maintain the same longitude/lattitude</td>
+</tr>
+<tr>
+<td>12</td>
+<td>11</td>
+<td>PASSTHRU</td>
+<td>Pass roll, yaw, and pitch directly from rx to servos in airplane mix</td>
+</tr>
+<tr>
+<td>13</td>
+<td>12</td>
+<td>BEEPERON</td>
+<td>Enable beeping - useful for locating a crashed aircraft</td>
+</tr>
+<tr>
+<td>14</td>
+<td>13</td>
+<td>LEDMAX</td>
+<td></td>
+</tr>
+<tr>
+<td>15</td>
+<td>14</td>
+<td>LEDLOW</td>
+<td></td>
+</tr>
+<tr>
+<td>16</td>
+<td>15</td>
+<td>LLIGHTS</td>
+<td></td>
+</tr>
+<tr>
+<td>17</td>
+<td>16</td>
+<td>CALIB</td>
+<td></td>
+</tr>
+<tr>
+<td>18</td>
+<td>17</td>
+<td>GOV</td>
+<td>Unused</td>
+</tr>
+<tr>
+<td>19</td>
+<td>18</td>
+<td>OSD</td>
+<td>Enable/Disable On-Screen-Display (OSD)</td>
+</tr>
+<tr>
+<td>20</td>
+<td>19</td>
+<td>TELEMETRY</td>
+<td>Enable telemetry via switch</td>
+</tr>
+<tr>
+<td>21</td>
+<td>20</td>
+<td>GTUNE</td>
+<td>G-Tune - auto tuning of Pitch/Roll/Yaw P values</td>
+</tr>
+<tr>
+<td>22</td>
+<td>21</td>
+<td>SONAR</td>
+<td>Altitude hold mode (sonar sensor only)</td>
+</tr>
+<tr>
+<td>23</td>
+<td>22</td>
+<td>SERVO1</td>
+<td>Servo 1</td>
+</tr>
+<tr>
+<td>24</td>
+<td>23</td>
+<td>SERVO2</td>
+<td>Servo 2</td>
+</tr>
+<tr>
+<td>25</td>
+<td>24</td>
+<td>SERVO3</td>
+<td>Servo 3</td>
+</tr>
+<tr>
+<td>26</td>
+<td>25</td>
+<td>BLACKBOX</td>
+<td>Enable BlackBox logging</td>
+</tr>
+<tr>
+<td>27</td>
+<td>26</td>
+<td>FAILSAFE</td>
+<td>Enter failsafe stage 2 manually</td>
+</tr>
+<tr>
+<td>28</td>
+<td>27</td>
+<td>AIRMODE</td>
+<td>Alternative mixer and additional PID logic for more stable copter</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mode-details">Mode details</h2>
+<h3 id="headfree">Headfree</h3>
+<p>In this mode, the "head" of the multicopter is always pointing to the same direction as when the feature was activated. This means that when the multicopter rotates around the Z axis (yaw), the controls will always respond according the same "head" direction.</p>
+<p>With this mode it is easier to control the multicopter, even fly it with the physical head towards you since the controls always respond the same. This is a friendly mode to new users of multicopters and can prevent losing the control when you don't know the head direction. </p>
+<h3 id="gps-return-to-home">GPS Return To Home</h3>
+<p>WORK-IN-PROGRESS.  This mode is not reliable yet, please share your experiences with the developers.</p>
+<p>In this mode the aircraft attempts to return to the GPS position recorded when the aircraft was armed.</p>
+<p>This mode should be enabled in conjunction with Angle or Horizon modes and an Altitude hold mode.</p>
+<p>Requires a 3D GPS fix and minimum of 5 satellites in view.</p>
+<h3 id="gps-position-hold">GPS Position Hold</h3>
+<p>WORK-IN-PROGRESS.  This mode is not reliable yet, please share your experiences with the developers.</p>
+<p>In this mode the aircraft attempts to stay at the same GPS position, as recorded when the mode is enabled.</p>
+<p>Disabling and re-enabling the mode will reset the GPS hold position.</p>
+<p>This mode should be enabled in conjunction with Angle or Horizon modes and an Altitude hold mode.</p>
+<p>Requires a 3D GPS fix and minimum of 5 satellites in view.</p>
+<h2 id="airmode">Airmode</h2>
+<p>In the standard mixer / mode, when the roll, pitch and yaw gets calculated and saturates a motor, all motors
+will be reduced equally. When motor goes below minimum it gets clipped off.
+Say you had your throttle just above minimum and tried to pull a quick roll - since two motors can't go
+any lower, you essentially get half the power (half of your PID gain).
+If your inputs would asked for more than 100% difference between the high and low motors, the low motors
+would get clipped, breaking the symmetry of the motor balance by unevenly reducing the gain.
+Airmode will enable full PID correction during zero throttle and give you ability for nice zero throttle
+gliding and actobatics. But also the cornering / turns will be much tighter now as there is always maximum
+possible correction performed. Airmode can also be enabled to work at all times by always putting it on the
+same switch like your arm switch or you can enable/disable it in air. Additional things and benefits: Airmode
+will additionally fully enable Iterm at zero throttle. Note that there is still some protection on the ground
+when throttle zeroed (below min_check) and roll/pitch sticks centered. This is a basic protection to limit
+motors spooling up on the ground. Also the Iterm will be reset above 70% of stick input in acro mode to prevent
+quick Iterm windups during finishes of rolls and flips, which will provide much cleaner and more natural stops
+of flips and rolls what again opens the ability to have higher I gains for some.
+Note that AIRMODE will also overrule motor stop function! It will basically also act as an idle up switch.
+Things to know about Airmode: There is an optional cli parameter "airmode_saturation_limit" what is a hard
+limit in percentage to where airmode will still try to provide the maximum possible correction. 0 means no limit,
+but that also means maximum possible motor correction during crashes and during equipment failure. In worse case
+that can cause effects like best called "tasmanian devil effect" or slight spazzing out. Default value of 50
+has a limit of 50% saturation. After that it will assume crash occured or equipment failed what will again remove
+airmode seeking for the best possible protection and act as a normal mode. It should be fine in most cases.</p>
+<h2 id="auxillary-configuration">Auxillary Configuration</h2>
+<p>Spare auxillary receiver channels can be used to enable/disable modes.  Some modes can only be enabled this way.</p>
+<p>Configure your transmitter so that switches or dials (potentiometers) send channel data on channels 5 and upwards (the first 4 channels are usually occupied by the throttle, aileron, rudder, and elevator channels).</p>
+<p><em>e.g. You can configure a 3 position switch to send 1000 when the switch is low, 1500 when the switch is in the middle and 2000 when the switch is high.</em></p>
+<p>Configure your tx/rx channel limits to use values between 1000 and 2000.  The range used by mode ranges is fixed to 900 to 2100.</p>
+<p>When a channel is within a specifed range the corresponding mode is enabled.</p>
+<p>Use the GUI configuration tool to allow easy configuration when channel.</p>
+<h3 id="cli">CLI</h3>
+<p>There is a CLI command, <code>aux</code> that allows auxillary configuration.  It takes 5 arguments as follows:</p>
+<ul>
+<li>AUD range slot number (0 - 39)</li>
+<li>mode id (see mode list above)</li>
+<li>AUX channel index (AUX1 = 0, AUX2 = 1,... etc)</li>
+<li>low position, from 900 to 2100. Should be a multiple of 25.</li>
+<li>high position, from 900 to 2100. Should be a multiple of 25.</li>
+</ul>
+<p>If the low and high position are the same then the values are ignored.</p>
+<p>e.g.</p>
+<p>Configure AUX range slot 0 to enable ARM when AUX1 is withing 1700 and 2100.</p>
+<pre><code>aux 0 0 0 1700 2100
+</code></pre>
+
+<p>You can display the AUX configuration by using the <code>aux</code> command with no arguments.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Oneshot/" class="btn btn-neutral float-right" title="Oneshot">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Mixer/" class="btn btn-neutral" title="Mixer"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  
+
+</body>
+</html>

@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Battery - cleanflight</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="https://media.readthedocs.org/css/badge_only.css" rel="stylesheet">
+  <link href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Battery";
+    var mkdocs_page_input_path = "Battery.md";
+    var mkdocs_page_url = "/Battery/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+  <script src="../readthedocs-data.js"></script>
+  <script src="../readthedocs-dynamic-include.js"></script>
+  <script src="https://media.readthedocs.org/static/core/js/readthedocs-doc-embed.js"></script>
+
+  
+<script async type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="cleanflight" /><meta name="readthedocs-version-slug" content="stable" /><meta name="readthedocs-resolver-filename" content="/Battery/" /><meta name="readthedocs-http-status" content="200" /></head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> cleanflight</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../1wire/">1wire</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Battery</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#battery-monitoring">Battery Monitoring</a></li>
+                
+                    <li><a class="toctree-l4" href="#supported-targets">Supported targets</a></li>
+                
+                    <li><a class="toctree-l4" href="#connections">Connections</a></li>
+                
+                    <li><a class="toctree-l4" href="#configuration">Configuration</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#current-monitoring">Current Monitoring</a></li>
+                
+                    <li><a class="toctree-l4" href="#configuration_1">Configuration</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Blackbox/">Blackbox</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - AlienWii32/">Board   AlienWii32</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - CC3D/">Board   CC3D</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - CJMCU/">Board   CJMCU</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - ChebuzzF3/">Board   ChebuzzF3</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - ColibriRace/">Board   ColibriRace</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - MotoLab/">Board   MotoLab</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - Naze32/">Board   Naze32</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - Olimexino/">Board   Olimexino</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - Paris Air Hero 32/">Board   Paris Air Hero 32</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - RMDO/">Board   RMDO</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - SPRacingF3/">Board   SPRacingF3</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - SPRacingF3Mini/">Board   SPRacingF3Mini</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - Sparky/">Board   Sparky</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Boards/">Boards</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Buzzer/">Buzzer</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Cli/">Cli</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Configuration/">Configuration</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Controls/">Controls</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Display/">Display</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Failsafe/">Failsafe</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Getting Started/">Getting Started</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Gps/">Gps</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Gtune/">Gtune</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Inflight Adjustments/">Inflight Adjustments</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Installation/">Installation</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Introduction/">Introduction</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../LedStrip/">LedStrip</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Migrating from baseflight/">Migrating from baseflight</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Mixer/">Mixer</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Modes/">Modes</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Oneshot/">Oneshot</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../PID tuning/">PID tuning</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Profiles/">Profiles</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Rssi/">Rssi</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Rx/">Rx</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Safety/">Safety</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Serial/">Serial</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Sonar/">Sonar</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Spektrum bind/">Spektrum bind</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Telemetry/">Telemetry</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../USB Flashing/">USB Flashing</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>API</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../API/MSP_extensions/">MSP extensions</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Development</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Atomic Barrier/">Atomic Barrier</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Blackbox Internals/">Blackbox Internals</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Building Manual/">Building Manual</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Building in Eclipse/">Building in Eclipse</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Building in Mac OS X/">Building in Mac OS X</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Building in Ubuntu/">Building in Ubuntu</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Building in Windows/">Building in Windows</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Configuration Storage/">Configuration Storage</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Development/">Development</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Hardware Debugging in Eclipse/">Hardware Debugging in Eclipse</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Hardware Debugging/">Hardware Debugging</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/PID Internals/">PID Internals</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Travis/">Travis</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">cleanflight</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Battery</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="battery-monitoring">Battery Monitoring</h1>
+<p>Cleanflight has a battery monitoring feature.  The voltage of the main battery can be measured by the system and used to trigger a low-battery warning <a href="../Buzzer/">buzzer</a>, on-board status LED flashing and LED strip patterns.</p>
+<p>Low battery warnings can:</p>
+<ul>
+<li>Help ensure you have time to safely land the aircraft</li>
+<li>Help maintain the life and safety of your LiPo/LiFe batteries, which should not be discharged below manufacturer recommendations</li>
+</ul>
+<p>Minimum and maximum cell voltages can be set, and these voltages are used to auto-detect the number of cells in the battery when it is first connected.</p>
+<p>Per-cell monitoring is not supported, as we only use one ADC to read the battery voltage.</p>
+<h2 id="supported-targets">Supported targets</h2>
+<p>All targets support battery voltage monitoring unless status.</p>
+<h2 id="connections">Connections</h2>
+<p>When dealing with batteries <strong>ALWAYS CHECK POLARITY!</strong></p>
+<p>Measure expected voltages <strong>first</strong> and then connect to the flight controller.  Powering the flight controller with
+incorrect voltage or reversed polarity will likely fry your flight controller. Ensure your flight controller
+has a voltage divider capable of measuring your particular battery voltage.</p>
+<h3 id="naze32">Naze32</h3>
+<p>The Naze32 has an on-board battery divider circuit; just connect your main battery to the VBAT connector.</p>
+<p><strong>CAUTION:</strong>  When installing the connection from main battery to the VBAT connector, be sure to first disconnect the main battery from the frame/power distribution board.  Check the wiring very carefully before connecting battery again.  Incorrect connections can immediately and completely destroy the flight controller and connected peripherals (ESC, GPS, Receiver etc.).</p>
+<h3 id="cc3d">CC3D</h3>
+<p>The CC3D has no battery divider.  To use voltage monitoring, you must create a divider that gives a 3.3v 
+MAXIMUM output when the main battery is fully charged.  Connect the divider output to S5_IN/PA0/RC5.</p>
+<p>Notes:</p>
+<ul>
+<li>
+<p>S5_IN/PA0/RC5 is Pin 7 on the 8 pin connector, second to last pin, on the opposite end from the 
+  GND/+5/PPM signal input.</p>
+</li>
+<li>
+<p>When battery monitoring is enabled on the CC3D, RC5 can no-longer be used for PWM input.</p>
+</li>
+</ul>
+<h3 id="sparky">Sparky</h3>
+<p>See the <a href="../Board - Sparky/">Sparky board chapter</a>.</p>
+<h2 id="configuration">Configuration</h2>
+<p>Enable the <code>VBAT</code> feature.</p>
+<p>Configure min/max cell voltages using the following CLI setting:</p>
+<p><code>vbat_scale</code> - Adjust this to match actual measured battery voltage to reported value.</p>
+<p><code>vbat_max_cell_voltage</code> - Maximum voltage per cell, used for auto-detecting battery voltage in 0.1V units, i.e. 43 = 4.3V</p>
+<p><code>set vbat_warning_cell_voltage</code> - Warning voltage per cell; this triggers battery-out alarms, in 0.1V units, i.e. 34 = 3.4V</p>
+<p><code>vbat_min_cell_voltage</code> - Minimum voltage per cell; this triggers battery-out alarms, in 0.1V units, i.e. 33 = 3.3V</p>
+<p>e.g.</p>
+<pre><code>set vbat_scale = 110
+set vbat_max_cell_voltage = 43
+set vbat_warning_cell_voltage = 34
+set vbat_min_cell_voltage = 33
+</code></pre>
+
+<h1 id="current-monitoring">Current Monitoring</h1>
+<p>Current monitoring (amperage) is supported by connecting a current meter to the appropriate current meter ADC input (see the documentation for your particular board).</p>
+<p>When enabled, the following values calculated and used by the telemetry and OLED display subsystems:
+<em> Amps
+</em> mAh used
+* Capacity remaining</p>
+<h2 id="configuration_1">Configuration</h2>
+<p>Enable current monitoring using the CLI command:</p>
+<pre><code>feature CURRENT_METER
+</code></pre>
+
+<p>Configure the current meter type using the <code>current_meter_type</code> settings here:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Sensor Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>None</td>
+</tr>
+<tr>
+<td>1</td>
+<td>ADC/hardware sensor</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Virtual sensor</td>
+</tr>
+</tbody>
+</table>
+<p>Configure capacity using the <code>battery_capacity</code> setting, in mAh units.</p>
+<p>If you're using an OSD that expects the multiwii current meter output value, then set <code>multiwii_current_meter_output</code> to <code>1</code> (this multiplies amperage sent to MSP by 10 and truncates negative values)).</p>
+<h3 id="adc-sensor">ADC Sensor</h3>
+<p>The current meter may need to be configured so the value read at the ADC input matches actual current draw.  Just like you need a voltmeter to correctly calibrate your voltage reading you also need an ammeter to calibrate the current sensor.</p>
+<p>Use the following settings to adjust calibration:</p>
+<p><code>current_meter_scale</code>
+<code>current_meter_offset</code></p>
+<p>It is recommended to set <code>multiwii_current_meter_output</code> to <code>0</code> when calibrating ADC current sensor.</p>
+<h3 id="virtual-sensor">Virtual Sensor</h3>
+<p>The virtual sensor uses the throttle position to calculate an estimated current value. This is useful when a real sensor is not available. The following settings adjust the virtual sensor calibration:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>current_meter_scale</code></td>
+<td>The throttle scaling factor [centiamps, i.e. 1/100th A]</td>
+</tr>
+<tr>
+<td><code>current_meter_offset</code></td>
+<td>The current at zero throttle (while disarmed) [centiamps, i.e. 1/100th A]</td>
+</tr>
+</tbody>
+</table>
+<p>There are two simple methods to tune these parameters:  one uses a battery charger and another depends on actual current measurements.</p>
+<h4 id="tuning-using-actual-current-measurements">Tuning Using Actual Current Measurements</h4>
+<p>If you know your craft's current draw while disarmed (Imin) and at maximum throttle while armed (Imax), calculate the scaling factors as follows:</p>
+<pre><code>current_meter_scale = (Imax - Imin) * 100000 / (Tmax + (Tmax * Tmax / 50))
+current_meter_offset = Imin * 100
+</code></pre>
+
+<p>Note: Tmax is maximum throttle offset (i.e. for <code>max_throttle</code> = 1850, Tmax = 1850 - 1000 = 850)</p>
+<p>For example, assuming a maximum current of 34.2A, a minimum current of 2.8A, and a Tmax <code>max_throttle</code> = 1850:</p>
+<pre><code>current_meter_scale = (Imax - Imin) * 100000 / (Tmax + (Tmax * Tmax / 50))
+                    = (34.2 - 2.8) * 100000 / (850 + (850 * 850 / 50))
+                    = 205
+current_meter_offset = Imin * 100 = 280
+</code></pre>
+
+<h4 id="tuning-using-battery-charger-measurement">Tuning Using Battery Charger Measurement</h4>
+<p>If you cannot measure current draw directly, you can approximate it indirectly using your battery charger.<br />
+However, note it may be difficult to adjust <code>current_meter_offset</code> using this method unless you can 
+measure the actual current draw with the craft disarmed.</p>
+<p>Note:
++ This method depends on the accuracy of your battery charger; results may vary.
++ If you add or replace equipment that changes the in-flight current draw (e.g. video transmitter, 
+  camera, gimbal, motors, prop pitch/sizes, ESCs, etc.), you should recalibrate.</p>
+<p>The general method is:</p>
+<ol>
+<li>Fully charge your flight battery</li>
+<li>Fly your craft, using &gt;50% of your battery pack capacity (estimated)</li>
+<li>Note Cleanflight's reported mAh draw</li>
+<li>Re-charge your flight battery, noting the mAh charging data needed to restore the pack to fully charged</li>
+<li>Adjust <code>current_meter_scale</code> to according to the formula given below</li>
+<li>Repeat and test</li>
+</ol>
+<p>Given (a) the reported mAh draw and the (b) mAh charging data, calculate a new <code>current_meter_scale</code> value as follows:</p>
+<pre><code>current_meter_scale = (charging_data_mAh / reported_draw_mAh) * old_current_meter_scale
+</code></pre>
+
+<p>For example, assuming:
++ A Cleanflight reported current draw of 1260 mAh
++ Charging data to restore full charge of 1158 mAh
++ A existing <code>current_meter_scale</code> value of 400 (the default)</p>
+<p>Then the updated <code>current_meter_scale</code> is:</p>
+<pre><code>current_meter_scale = (charging_data_mAh / reported_draw_mAh) * old_current_meter_scale
+                    = (1158 / 1260) * 400
+                    = 368
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Blackbox/" class="btn btn-neutral float-right" title="Blackbox">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../1wire/" class="btn btn-neutral" title="1wire"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  
+
+</body>
+</html>

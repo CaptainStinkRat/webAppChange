@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flight Modes &mdash; Copter  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/ardupilot.css?v=ae9666d5" />
+      <link rel="stylesheet" type="text/css" href="../_static/common_theme_override.css?v=01d3cdd0" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon_copter.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/./useralerts.js?v=3014f84e"></script>
+        <script data-domain="ardupilot.org" defer="defer" src="https://plausible.ardupilot.org/js/script.outbound-links.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Acro Mode" href="acro-mode.html" />
+    <link rel="prev" title="Independent Watchdog and Crash Dump" href="common-watchdog.html" /> 
+</head>
+
+<body class="wy-body-for-nav">    
+    <div id='cssmenu'>
+        <ul>
+           <li><a href='/ardupilot/index.html'>Home</a>
+              <ul>
+                 <li><a href='/copter/index.html'>Copter</a></li>
+                 <li><a href='/plane/index.html'>Plane</a></li>
+                 <li><a href='/rover/index.html'>Rover</a></li>
+                 <li><a href='/blimp/index.html'>Blimp</a></li>
+                 <li><a href='/sub/index.html'>Sub</a></li>
+                 <li><a href='/antennatracker/index.html'>AntennaTracker</a></li>
+                 <li><a href='/planner/index.html'>Mission Planner</a></li>
+                 <li><a href='/planner2/index.html'>APM Planner 2</a></li>
+                 <li><a href='/mavproxy/index.html'>MAVProxy</a></li>
+                 <li><a href='/dev/docs/companion-computers.html'>Companion Computers</a></li>
+                 <li><a href='/dev/index.html'>Developer</a></li>
+              </ul>
+           </li>
+           
+          
+           
+           <li><a href='https://firmware.ardupilot.org/'>Downloads</a>
+              <ul>
+                <li><a href='https://firmware.ardupilot.org/Tools/MissionPlanner/'>Mission Planner</a></li>
+                <li><a href='https://firmware.ardupilot.org/Tools/APMPlanner/'>APM Planner 2</a></li>
+                   <li><a title="Advanced User Tools" href="common-downloads_advanced_user_tools.html">Advanced User Tools</a></li>
+                   <li><a title="Developer Tools" href="common-downloads_developer_tools.html">Developer Tools</a></li>
+                   <li><a title="Firmware" href="common-downloads_firmware.html">Firmware</a></li>
+                </ul>
+           </li>
+           
+           <li><a href='https://discuss.ardupilot.org' />Community</a>
+              <ul>
+                 <li><a href='https://discuss.ardupilot.org/'>Support Forums</a></li>
+                 <li><a href='https://www.facebook.com/groups/ArduPilot.org'>Facebook</a></li>
+                 <li><a href='https://ardupilot.org/discord'>Developer Chat (Discord)</a></li>
+                 <li><a href='https://ardupilot.org/discord'>Developer Voice (Discord)</a></li>
+				 <li><a href='https://ardupilot.org/dev/docs/common-contact-us.html'>Contact us</a></li>
+				 <li><a href='https://ardupilot.org/dev/index.html#getting-involved'>Getting involved</a></li>
+                   <li><a title="Commercial Support" href="common-commercial-support.html">Commercial Support</a></li>
+                   <li><a title="Dev Team" href="common-team.html">Development Team</a></li>
+                   <li><a title="Training Centers" href="common-training-centers.html">UAS Training Centers</a></li>
+              </ul>
+           </li>
+             <li><a title="Stores" href="common-stores.html">Stores</a></li>
+
+
+           
+                        <li><a title="About" href="../index.html">About</a>
+               <ul>
+                   <li><a title="Project News" href="project-news.html">News</a></li>
+                   <li><a title="History of ArduPilot" href="common-history-of-ardupilot.html">History</a></li>
+                   <li><a href='https://ardupilot.org/dev/docs/license-gplv3.html'>License</a></li>
+                   <li><a href='https://ardupilot.org/dev/docs/trademark.html'>Trademark</a></li>
+                   <li><a title="Acknowledgments" href="common-acknowledgments.html">Acknowledgments</a></li>
+                   <li><a title="Wiki Editing Guide" href="common-wiki_editing_guide.html">Wiki Editing Guide</a></li>
+                   <li><a title="Partners Program" href="common-partners.html">Partners Program</a></li>
+               </ul>
+             </li>
+        </ul>
+        
+
+</div>
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Copter
+              <img src="../_static/ardupilot_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="copter-introduction.html">Introduction to Copter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common-autopilots.html">Choosing an Autopilot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common-GCS.html">Ground Control Stations</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="initial-setup.html">First Time Setup</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="common-install-gcs.html">Install Ground Station Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autopilot-assembly-instructions.html">Autopilot System Assembly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-loading-firmware-onto-pixhawk.html">Loading Firmware to boards with existing ArduPilot firmware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-loading-firmware-onto-chibios-only-boards.html">Loading Firmware to boards without existing ArduPilot firmware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-connect-mission-planner-autopilot.html">Connect Mission Planner to AutoPilot</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="configuring-hardware.html">Configuration</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="common-basic-operation.html">Basic System Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="frame-type-configuration.html">Frame Type Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect-escs-and-motors.html">Motor Numbering and Direction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common-radio-control-calibration.html">Radio Control Calibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common-accelerometer-calibration.html">Accelerometer Calibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common-compass-calibration-in-mission-planner.html">Compass Calibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common-rc-transmitter-flight-mode-configuration.html">RC Transmitter Mode Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="esc-calibration.html">ESC Calibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="set-motor-range.html">Configure Motor Range (optional)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="failsafe-landing-page.html">Failsafe Mechanisms</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Flight Modes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#recommended-flight-modes">Recommended Flight Modes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gps-dependency">GPS Dependency</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#full-list-of-flight-modes">Full list of flight modes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="flying-arducopter.html">First Flight and Tuning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traditional-helicopters.html">Traditional Helicopters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common-mission-planning.html">Mission Planning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common-when-problems-arise.html">If A Problem Arises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common-advanced-configuration.html">Advanced Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common-optional-hardware.html">Peripheral Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="additional-information.html">Additional Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common-user-alerts.html">User Alerts</a></li>
+</ul>
+
+          <!-- add paypal and dronecode logos -->        <div style="margin: auto; padding-left:20px; padding-right:20px; width=100%">
+
+        <hr />
+        <form style="margin:auto;" action="https://ardupilot.org/donate">
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate" />
+        </form>
+        <br>
+        <a href="common-donation.html">Individual</a>
+        <a href="common-partners.html">Partners</a>
+        <a href="https://ardupilot.org/shop">SWAG Shop</a>
+
+        <hr />
+        </div>
+          <!-- endadd paypal and dronecode logos -->
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Copter</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="initial-setup.html">First Time Setup</a></li>
+          <li class="breadcrumb-item"><a href="configuring-hardware.html">Mandatory Hardware Configuration</a></li>
+      <li class="breadcrumb-item active">Flight Modes</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ArduPilot/ardupilot_wiki/blob/master/copter/source/docs/flight-modes.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="flight-modes">
+<span id="id1"></span><h1>Flight Modes<a class="headerlink" href="#flight-modes" title="Link to this heading">Â¶</a></h1>
+<p>This article provides an overview and links to the available flight modes
+for Copter.</p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">Â¶</a></h2>
+<p>Copter has 25 flight built-in flight modes, 10 of which are regularly
+used. There are modes to support different levels/types of flight
+stabilization, a sophisticated autopilot, a follow-me system etc.</p>
+<p>Flight modes are controlled through the radio (via a <a class="reference internal" href="common-rc-transmitter-flight-mode-configuration.html#common-rc-transmitter-flight-mode-configuration"><span class="std std-ref">transmitter switch</span></a>),
+via mission commands, or using commands from a ground station (GCS) or
+companion computer.</p>
+<p>The table below shows for each flight mode whether it provides altitude or position control, and whether it requires valid position information from a sensor (typically a GPS) in order to arm or switch into this mode. Position Control also requires a compass for good performance. In addition ALT_HOLD requires an altitude sensor.</p>
+<table border="1" class="docutils">
+<tr><th>Mode</th><th>Alt Ctrl</th><th>Pos Ctrl</th><th>Pos Sensor</th><th>Summary</th></tr>
+<tr><td>Acro</td><td>-</td><td>-</td><td></td><td>Holds attitude, no self-level</td></tr>
+<tr><td>Airmode</td><td>-</td><td>-/+</td><td></td><td>Actually not a mode, but a feature,see below</td></tr>
+<tr><td>Alt Hold</td><td>s</td><td>+</td><td></td><td>Holds altitude and self-levels the roll & pitch</td></tr>
+<tr><td>Auto</td><td>A</td><td>A</td><td>Y</td><td>Executes pre-defined mission</td></tr>
+<tr><td>AutoTune</td><td>s</td><td>A</td><td>Y</td><td>Automated pitch and bank procedure to improve control loops</td></tr>
+<tr><td>Brake</td><td>A</td><td>A</td><td>Y</td><td>Brings copter to an immediate stop</td></tr>
+<tr><td>Circle</td><td>s</td><td>A</td><td>Y</td><td>Automatically circles a point in front of the vehicle</td></tr>
+<tr><td>Drift</td><td>-</td><td>+</td><td>Y</td><td>Like stabilize, but coordinates yaw with roll like a plane</td></tr>
+<tr><td>Flip</td><td>A</td><td>A</td><td></td><td>Rises and completes an automated flip</td></tr>
+<tr><td>FlowHold</td><td>s</td><td>A</td><td></td><td>Position control using Optical Flow</td></tr>
+<tr><td>Follow</td><td>s</td><td>A</td><td>Y</td><td>Follows another vehicle</td></tr>
+<tr><td>Guided</td><td>A</td><td>A</td><td>Y</td><td>Navigates to single points commanded by GCS</td></tr>
+ <tr><td>Heli_Autorotate</td><td>A</td><td>A</td><td>Y</td><td>Used for emergencies in traditional helicopters. Helicopter only.  Currently SITL only.</td></tr>
+<tr><td>Land</td><td>A</td><td>s</td><td>(Y)</td><td>Reduces altitude to ground level, attempts to go straight down</td></tr>
+<tr><td>Loiter</td><td>s</td><td>s</td><td>Y</td><td>Holds altitude and position, uses GPS for movements</td></tr>
+<tr><td>PosHold</td><td>s</td><td>+</td><td>Y</td><td>Like loiter, but manual roll and pitch when sticks not centered</td></tr>
+<tr><td>RTL</td><td>A</td><td>A</td><td>Y</td><td>Returns above takeoff location, may also include landing</td></tr>
+<tr><td>Simple/Super Simple</td><td></td><td></td><td>Y</td><td>An add-on to flight modes to use pilot's view instead of yaw orientation</td></tr>
+<tr><td>SmartRTL</td><td>A</td><td>A</td><td>Y</td><td>RTL, but traces path to get home</td></tr>
+<tr><td>Sport</td><td>s</td><td>s</td><td></td><td>Alt-hold, but holds pitch & roll when sticks centered</td></tr>
+<tr><td>Stabilize</td><td>-</td><td>+</td><td></td><td>Self-levels the roll and pitch axis</td></tr>
+<tr><td>SysID</td><td>-</td><td>+</td><td></td><td>Special diagnostic/modeling mode</td></tr>
+<tr><td>Throw</td><td>A</td><td>A</td><td>Y</td><td>Holds position after a throwing takeoff. Multirotors only.</td></tr>
+<tr><td>Turtle</td><td>-</td><td>-</td><td></td><td>Allows reversing and spinning up adjacent pairs of motors in order to flip a crashed, inverted vehicle back upright. Multirotors only.</td></tr>
+<tr><td>ZigZag</td><td>A</td><td>A</td><td>Y</td><td>Useful for crop spraying</td></tr>
+</table><table border="1" class="docutils">
+<tr><th>Symbol</th><th>Definition</th></tr>
+<tr><td>-</td><td>Manual control</td><tr>
+<tr><td>+</td><td>Manual control with limits & self-level</td><tr>
+<tr><td>s</td><td>Pilot controls rate of changes</td></tr>
+<tr><td>A</td><td>Automatic control</td></tr>
+</table></section>
+<section id="recommended-flight-modes">
+<h2>Recommended Flight Modes<a class="headerlink" href="#recommended-flight-modes" title="Link to this heading">Â¶</a></h2>
+<p>In general when first starting to use Copter you should progress through
+the flight modes in the order listed below, being sure that you are
+comfortable with each before progressing to the next (click the links
+for more details):</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="stabilize-mode.html#stabilize-mode"><span class="std std-ref">Stabilize</span></a></p></li>
+<li><p><a class="reference internal" href="altholdmode.html#altholdmode"><span class="std std-ref">Alt Hold</span></a></p></li>
+<li><p><a class="reference internal" href="loiter-mode.html#loiter-mode"><span class="std std-ref">Loiter</span></a></p></li>
+<li><p><a class="reference internal" href="rtl-mode.html#rtl-mode"><span class="std std-ref">RTL (Return-to-Launch)</span></a></p></li>
+<li><p><a class="reference internal" href="auto-mode.html#auto-mode"><span class="std std-ref">Auto</span></a></p></li>
+</ul>
+<p>Additional flight modes:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="acro-mode.html#acro-mode"><span class="std std-ref">Acro</span></a></p></li>
+<li><p><a class="reference internal" href="airmode.html#airmode"><span class="std std-ref">AirMode</span></a></p></li>
+<li><p><a class="reference internal" href="traditional-helicopter-autorotation-mode.html#traditional-helicopter-autorotation-mode"><span class="std std-ref">Heli_Autorotate</span></a> for traditional helicopters only.</p></li>
+<li><p><a class="reference internal" href="autotune.html#autotune"><span class="std std-ref">AutoTune</span></a></p></li>
+<li><p><a class="reference internal" href="brake-mode.html#brake-mode"><span class="std std-ref">Brake</span></a></p></li>
+<li><p><a class="reference internal" href="circle-mode.html#circle-mode"><span class="std std-ref">Circle</span></a></p></li>
+<li><p><a class="reference internal" href="drift-mode.html#drift-mode"><span class="std std-ref">Drift</span></a></p></li>
+<li><p><a class="reference internal" href="flip-mode.html#flip-mode"><span class="std std-ref">Flip</span></a></p></li>
+<li><p><a class="reference internal" href="flowhold-mode.html#flowhold-mode"><span class="std std-ref">FlowHold</span></a></p></li>
+<li><p><a class="reference internal" href="follow-mode.html#follow-mode"><span class="std std-ref">Follow</span></a></p></li>
+<li><p><a class="reference internal" href="ac2_guidedmode.html#ac2-guidedmode"><span class="std std-ref">Guided</span></a> (and <a class="reference internal" href="ac2_guidedmode.html#guided-nogps"><span class="std std-ref">Guided_NoGPS</span></a>)</p></li>
+<li><p><a class="reference internal" href="land-mode.html#land-mode"><span class="std std-ref">Land</span></a></p></li>
+<li><p><a class="reference internal" href="poshold-mode.html#poshold-mode"><span class="std std-ref">PosHold</span></a></p></li>
+<li><p><a class="reference internal" href="sport-mode.html#sport-mode"><span class="std std-ref">Sport</span></a></p></li>
+<li><p><a class="reference internal" href="throw-mode.html#throw-mode"><span class="std std-ref">Throw</span></a> for multirotors only.</p></li>
+<li><p><a class="reference internal" href="ac2_followme.html#ac2-followme"><span class="std std-ref">Follow Me</span></a></p></li>
+<li><p><a class="reference internal" href="simpleandsuper-simple-modes.html#simpleandsuper-simple-modes"><span class="std std-ref">Simple and Super Simple</span></a></p></li>
+<li><p><a class="reference internal" href="smartrtl-mode.html#smartrtl-mode"><span class="std std-ref">Smart RTL (Return-to-Launch)</span></a></p></li>
+<li><p><a class="reference internal" href="common-systemid-mode.html#common-systemid-mode"><span class="std std-ref">SysID (System Identification)</span></a></p></li>
+<li><p><a class="reference internal" href="turtle-mode.html#turtle-mode"><span class="std std-ref">Turtle</span></a> for multirotors only.</p></li>
+<li><p><a class="reference internal" href="zigzag-mode.html#zigzag-mode"><span class="std std-ref">ZigZag</span></a></p></li>
+<li><p><a class="reference internal" href="common-ads-b-receiver.html#common-ads-b-receiver"><span class="std std-ref">Avoid_ADSB</span></a> for ADS-B based avoidance of manned aircraft.  Should not be set-up as a pilot selectable flight mode.</p></li>
+</ul>
+<p>Most transmitters provide a 3 position switch but you can find
+instructions <a class="reference internal" href="common-rc-transmitter-flight-mode-configuration.html#common-rc-transmitter-flight-mode-configuration"><span class="std std-ref">here for setting up a 6-position flight mode switch</span></a>.</p>
+</section>
+<section id="gps-dependency">
+<h2>GPS Dependency<a class="headerlink" href="#gps-dependency" title="Link to this heading">Â¶</a></h2>
+<p>Flight modes that use positioning data require valid position identification prior to takeoff. When using GPS, to verify if your autopilot has acquired GPS lock,
+connect to a ground station or consult your autopilotâs hardware
+overview page to see the LED indication for GPS lock.</p>
+<p>Below is a summary of position identification dependency for Copter flight modes. Most often this position information is obtained via a GPS, but other
+position sensors, such as 3D cameras or beacons, may be used and would need to provide a valid location, for those modes requiring it, prior to arming.</p>
+<p>Requires valid position prior to takeoff:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="auto-mode.html#auto-mode"><span class="std std-ref">Auto</span></a></p></li>
+<li><p><a class="reference internal" href="traditional-helicopter-autorotation-mode.html#traditional-helicopter-autorotation-mode"><span class="std std-ref">Heli_Autorotate</span></a></p></li>
+<li><p><a class="reference internal" href="circle-mode.html#circle-mode"><span class="std std-ref">Circle</span></a></p></li>
+<li><p><a class="reference internal" href="drift-mode.html#drift-mode"><span class="std std-ref">Drift</span></a></p></li>
+<li><p><a class="reference internal" href="follow-mode.html#follow-mode"><span class="std std-ref">Follow</span></a></p></li>
+<li><p><a class="reference internal" href="ac2_followme.html#ac2-followme"><span class="std std-ref">Follow Me</span></a></p></li>
+<li><p><a class="reference internal" href="ac2_guidedmode.html#ac2-guidedmode"><span class="std std-ref">Guided</span></a></p></li>
+<li><p><a class="reference internal" href="loiter-mode.html#loiter-mode"><span class="std std-ref">Loiter</span></a></p></li>
+<li><p><a class="reference internal" href="poshold-mode.html#poshold-mode"><span class="std std-ref">PosHold</span></a></p></li>
+<li><p><a class="reference internal" href="rtl-mode.html#rtl-mode"><span class="std std-ref">RTL (Return-to-Launch)</span></a></p></li>
+<li><p><a class="reference internal" href="smartrtl-mode.html#smartrtl-mode"><span class="std std-ref">Smart RTL (Return-to-Launch)</span></a></p></li>
+<li><p><a class="reference internal" href="throw-mode.html#throw-mode"><span class="std std-ref">Throw</span></a></p></li>
+<li><p><a class="reference internal" href="zigzag-mode.html#zigzag-mode"><span class="std std-ref">ZigZag</span></a></p></li>
+</ul>
+<p>Do not require position information:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="acro-mode.html#acro-mode"><span class="std std-ref">Acro</span></a></p></li>
+<li><p><a class="reference internal" href="airmode.html#airmode"><span class="std std-ref">AirMode</span></a></p></li>
+<li><p><a class="reference internal" href="altholdmode.html#altholdmode"><span class="std std-ref">Alt Hold</span></a></p></li>
+<li><p><a class="reference internal" href="stabilize-mode.html#stabilize-mode"><span class="std std-ref">Stabilize</span></a></p></li>
+<li><p><a class="reference internal" href="sport-mode.html#sport-mode"><span class="std std-ref">Sport</span></a></p></li>
+<li><p><a class="reference internal" href="common-systemid-mode.html#common-systemid-mode"><span class="std std-ref">SysID</span></a></p></li>
+<li><p><a class="reference internal" href="turtle-mode.html#turtle-mode"><span class="std std-ref">Turtle</span></a></p></li>
+<li><p><a class="reference internal" href="land-mode.html#land-mode"><span class="std std-ref">Land</span></a></p></li>
+</ul>
+</section>
+<section id="full-list-of-flight-modes">
+<h2>Full list of flight modes<a class="headerlink" href="#full-list-of-flight-modes" title="Link to this heading">Â¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="acro-mode.html">Acro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="altholdmode.html">Altitude Hold</a></li>
+<li class="toctree-l1"><a class="reference internal" href="airmode.html">AirMode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto-mode.html">Auto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brake-mode.html">Brake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="circle-mode.html">Circle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drift-mode.html">Drift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flip-mode.html">Flip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flowhold-mode.html">FlowHold</a></li>
+<li class="toctree-l1"><a class="reference internal" href="follow-mode.html">Follow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ac2_followme.html">Follow Me (GCS Enabled)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ac2_guidedmode.html">Guided</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traditional-helicopter-autorotation-mode.html">Heli_Autorotate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="land-mode.html">Land</a></li>
+<li class="toctree-l1"><a class="reference internal" href="loiter-mode.html">Loiter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poshold-mode.html">PosHold</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rtl-mode.html">RTL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simpleandsuper-simple-modes.html">Simple and Super Simple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smartrtl-mode.html">Smart RTL (Return-to-Launch)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sport-mode.html">Sport</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stabilize-mode.html">Stabilize</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common-systemid-mode.html">System Identification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="throw-mode.html">Throw</a></li>
+<li class="toctree-l1"><a class="reference internal" href="turtle-mode.html">Turtle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zigzag-mode.html">ZigZag</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="common-watchdog.html" class="btn btn-neutral float-left" title="Independent Watchdog and Crash Dump" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="acro-mode.html" class="btn btn-neutral float-right" title="Acro Mode" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+    Questions, issues, and suggestions about this page can be raised on the <a href="https://discuss.ardupilot.org">forums</a>. Issues and suggestions may be posted on the forums or the <a href="https://github.com/ArduPilot/ardupilot_wiki/issues/new?title=Flight Modes&amp;body=[Flight Modes](https://ardupilot.org/copter/docs/flight-modes.html)%20-%20Describe%20the%20issue/suggestion%20and%20improve%20the%20title.%20Please%20keep%20a%20link%20to%20the%20original%20article%20if%20relevant.&amp;labels=docs">Github Issue Tracker</a>.
+    <hr/>
+
+  <div role="contentinfo">
+    <p><a style="float:right;" rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a>&#169; Copyright 2024, ArduPilot Dev Team.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

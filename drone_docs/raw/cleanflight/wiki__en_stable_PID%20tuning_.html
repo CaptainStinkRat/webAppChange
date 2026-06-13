@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>PID tuning - cleanflight</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="https://media.readthedocs.org/css/badge_only.css" rel="stylesheet">
+  <link href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "PID tuning";
+    var mkdocs_page_input_path = "PID tuning.md";
+    var mkdocs_page_url = "/PID tuning/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+  <script src="../readthedocs-data.js"></script>
+  <script src="../readthedocs-dynamic-include.js"></script>
+  <script src="https://media.readthedocs.org/static/core/js/readthedocs-doc-embed.js"></script>
+
+  
+<script async type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="cleanflight" /><meta name="readthedocs-version-slug" content="stable" /><meta name="readthedocs-resolver-filename" content="/PID%20tuning/" /><meta name="readthedocs-http-status" content="200" /></head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> cleanflight</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../1wire/">1wire</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Battery/">Battery</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Blackbox/">Blackbox</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - AlienWii32/">Board   AlienWii32</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - CC3D/">Board   CC3D</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - CJMCU/">Board   CJMCU</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - ChebuzzF3/">Board   ChebuzzF3</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - ColibriRace/">Board   ColibriRace</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - MotoLab/">Board   MotoLab</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - Naze32/">Board   Naze32</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - Olimexino/">Board   Olimexino</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - Paris Air Hero 32/">Board   Paris Air Hero 32</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - RMDO/">Board   RMDO</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - SPRacingF3/">Board   SPRacingF3</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - SPRacingF3Mini/">Board   SPRacingF3Mini</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Board - Sparky/">Board   Sparky</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Boards/">Boards</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Buzzer/">Buzzer</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Cli/">Cli</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Configuration/">Configuration</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Controls/">Controls</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Display/">Display</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Failsafe/">Failsafe</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Getting Started/">Getting Started</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Gps/">Gps</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Gtune/">Gtune</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Inflight Adjustments/">Inflight Adjustments</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Installation/">Installation</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Introduction/">Introduction</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../LedStrip/">LedStrip</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Migrating from baseflight/">Migrating from baseflight</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Mixer/">Mixer</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Modes/">Modes</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Oneshot/">Oneshot</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">PID tuning</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#pid-tuning">PID tuning</a></li>
+                
+                    <li><a class="toctree-l4" href="#pids">PIDs</a></li>
+                
+                    <li><a class="toctree-l4" href="#tpa-and-tpa-breakpoint">TPA and TPA Breakpoint</a></li>
+                
+                    <li><a class="toctree-l4" href="#pid-controllers">PID controllers</a></li>
+                
+                    <li><a class="toctree-l4" href="#rc-rate-pitch-and-roll-rates-pr-rate-before-they-were-separated-and-yaw-rate">RC rate, Pitch and Roll Rates (P/R rate before they were separated), and Yaw rate</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Profiles/">Profiles</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Rssi/">Rssi</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Rx/">Rx</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Safety/">Safety</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Serial/">Serial</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Sonar/">Sonar</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Spektrum bind/">Spektrum bind</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Telemetry/">Telemetry</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../USB Flashing/">USB Flashing</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>API</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../API/MSP_extensions/">MSP extensions</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Development</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Atomic Barrier/">Atomic Barrier</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Blackbox Internals/">Blackbox Internals</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Building Manual/">Building Manual</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Building in Eclipse/">Building in Eclipse</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Building in Mac OS X/">Building in Mac OS X</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Building in Ubuntu/">Building in Ubuntu</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Building in Windows/">Building in Windows</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Configuration Storage/">Configuration Storage</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Development/">Development</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Hardware Debugging in Eclipse/">Hardware Debugging in Eclipse</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Hardware Debugging/">Hardware Debugging</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/PID Internals/">PID Internals</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../development/Travis/">Travis</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">cleanflight</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>PID tuning</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="pid-tuning">PID tuning</h1>
+<p>Every aspect of flight dynamics is controlled by the selected "PID controller". This is an algorithm which is
+responsible for reacting to your stick inputs and keeping the craft stable in the air by using the gyroscopes and/or
+accelerometers (depending on your flight mode).</p>
+<p>The "PIDs" are a set of tuning parameters which control the operation of the PID controller. The optimal PID settings
+to use are different on every craft, so if you can't find someone with your exact setup who will share their settings
+with you, some trial and error is required to find the best performing PID settings.</p>
+<p>A video on how to recognise and correct different flight problems caused by PID settings is available here:</p>
+<p>https://www.youtube.com/watch?v=YNzqTGEl2xQ</p>
+<p>Basically, the goal of the PID controller is to bring the craft's rotation rate in all three axes to the rate that
+you're commanding with your sticks. An error is computed which is the difference between your target rotation rate and
+the actual one measured by the gyroscopes, and the controller tries to bring this error to zero.</p>
+<h2 id="pids">PIDs</h2>
+<p><strong>The P term</strong> controls the strength of the correction that is applied to bring the craft toward the target angle or
+rotation rate. If the P term is too low, the craft will be difficult to control as it won't respond quickly enough to
+keep itself stable. If it is set too high, the craft will rapidly oscillate/shake as it continually overshoots its
+target.</p>
+<p><strong>The I term</strong> corrects small, long term errors. If it is set too low, the craft's attitude will slowly drift. If it is
+set too high, the craft will oscillate (but with slower oscillations than with P being set too high).</p>
+<p><strong>The D term</strong> attempts to increase system stability by monitoring the rate of change in the error. If the error is rapidly converging to zero, the D term causes the strength of the correction to be backed off in order to avoid overshooting the target.</p>
+<h2 id="tpa-and-tpa-breakpoint">TPA and TPA Breakpoint</h2>
+<p>TPA stands for Throttle PID Attenuation and according to <a href="http://blog.alexyorke.net/what-is-tpa/">AlexYork.net</a>:</p>
+<blockquote>
+<p>"TPA basically allows an aggressively tuned multi-rotor (one that feels very locked in) to reduce its PID gains when throttle is applied beyond the TPA threshold/breakpoint in order to eliminate fast oscillations.."</p>
+</blockquote>
+<p>Note that TPA is set via CLI or on the PID TUNING tab of the GUI.  tpa_breakpoint is set via CLI</p>
+<p>Also note that TPA and tpa_breakpoint may not be used in certain PID Controllers.  Check the description on the individual controller.</p>
+<p>TPA applies a PID value reduction in relation to full Throttle. It is used to apply dampening of PID values as full throttle is reached.</p>
+<p><strong>TPA</strong> = % of dampening that will occur at full throttle.</p>
+<p><strong>tpa_breakpoint</strong> = the point in the throttle curve at which TPA will begin to be applied.</p>
+<p>An Example: With TPA = 50 (or .5 in the GUI) and tpa_breakpoint = 1500 (assumed throttle range 1000 - 2000)</p>
+<ul>
+<li>At 1500 on the throttle channel, the PIDs will begin to be dampened.</li>
+<li>At 3/4 throttle (1750), PIDs are reduced by approximately 25% (half way between 1500 and 2000 the dampening will be 50% of the total TPA value of 50% in this example)</li>
+<li>At full throttle (2000) the full amount of dampening set in TPA is applied. (50% reduction in this example)</li>
+<li>TPA can lead into increase of rotation rate when more throttle applied. You can get faster flips and rolls when more throttle applied due to coupling of PID's and rates. Only PID controllers MWREWRITE and LUX are using linear TPA implementation, where no rotation rates are affected when TPA is being used.</li>
+</ul>
+<p><img alt="tpa example chart" src="https://cloud.githubusercontent.com/assets/1668170/6053290/655255dc-ac92-11e4-9491-1a58d868c131.png" title="TPA Example Chart" /></p>
+<p><strong>How and Why to use this?</strong></p>
+<p>If you are getting oscillations starting at say 3/4 throttle, set tpa breakpoint = 1750 or lower (remember, this is assuming your throttle range is 1000-2000), and then slowly increase TPA until your oscillations are gone. Usually, you will want tpa breakpoint to start a little sooner then when your oscillations start so you'll want to experiment with the values to reduce/remove the oscillations.</p>
+<h2 id="pid-controllers">PID controllers</h2>
+<p>Cleanflight has 3 built-in PID controllers which each have different flight behavior. Each controller requires
+different PID settings for best performance, so if you tune your craft using one PID controller, those settings will
+likely not work well on any of the other controllers.</p>
+<p>You can change between PID controllers by running <code>set pid_controller=x</code> on the CLI tab of the Cleanflight
+Configurator, where <code>x</code> is the controller you want to use. Please read these notes first before trying one
+out.</p>
+<p>Note that older Cleanflight versions had 6 pid controllers, experimental and old ones were removed in 1.11.0 / API 1.14.0.</p>
+<h3 id="pid-controller-mw23">PID controller "MW23"</h3>
+<p>This PID Controller is a direct port of the PID controller from MultiWii 2.3 and later.</p>
+<p>The algorithm is handling roll and pitch differently to yaw. Users with problems on yaw authority should try this one.</p>
+<p>In Horizon and Angle modes, this controller uses both the LEVEL "P" and "I" settings in order to tune the 
+auto-leveling corrections in a similar way to the way that P and I settings are applied to roll and yaw axes in the acro
+flight modes. The LEVEL "D" term is used as a limiter to constrain the maximum correction applied by the LEVEL "P" term.</p>
+<p>Cleanflight 1.12.0 changed the default value for P_Level from 90 to 20 because MWREWRITE became the default PID controller.
+If you use MW23 then try setting this to 90 before flying.</p>
+<h3 id="pid-controller-mwrewrite">PID controller "MWREWRITE"</h3>
+<p>This is a newer PID controller that is derived from the one in MultiWii 2.3 and later. It works better from
+all accounts, and fixes some inherent problems in the way the old one worked. From reports, tuning is apparently easier, 
+and it tolerates a wider range of PID values well.</p>
+<p>In Angle mode, this controller uses the LEVEL "P" PID setting to decide how strong the auto-level correction should
+be. </p>
+<p>Cleanflight 1.12.0 changed the default value for P_Level to 20. This is the recommended value for the MWREWRITE PID controller  which provides a stable flight in Angle mode.  The old default value was 90 which provided a very unstable flight for some users with this pid controller.</p>
+<p>In Horizon mode, this controller uses the LEVEL "I" PID setting to decide how much auto-level correction should be applied. Level "I" term: Strength of horizon auto-level. value of 0.030 in the configurator equals to 3.0 for Level P. Level "D" term: Strength of horizon transition. 0 is more stick travel on level and 255 is more rate mode what means very narrow angle of leveling.</p>
+<h3 id="pid-controller-lux">PID controller "LUX"</h3>
+<p>This is a new floating point based PID controller. MW23 and MWREWRITE use integer arithmetic, which was faster in the days of the
+slower 8-bit MultiWii controllers, but is less precise.</p>
+<p>This controller has code that attempts to compensate for variations in the looptime, which should mean that the PIDs
+don't have to be retuned when the looptime setting changes. </p>
+<p>There were initially some problems with horizon mode, and sluggishness in acro mode, that were recently fixed by
+nebbian in v1.6.0.</p>
+<p>It is the first PID Controller designed for 32-bit processors and not derived from MultiWii.</p>
+<p>The strength of the auto-leveling correction applied during Angle mode is set by the parameter "level_angle" which
+is labeled "LEVEL Proportional" in the GUI. This can be used to tune the auto-leveling strength in Angle mode compared to
+Horizon mode. The default is 5.0.</p>
+<p>The strength of the auto-leveling correction applied during Horizon mode is set by the parameter "level_horizon" which
+is labeled "LEVEL Integral" in the GUI. The default is 3.0, which makes the Horizon mode apply weaker self-leveling than
+the Angle mode. Note: There is currently a bug in the Configurator which shows this parameter divided by 100 (so it
+shows as 0.03 rather than 3.0).</p>
+<p>The transition between self-leveling and acro behavior in Horizon mode is controlled by the "sensitivity_horizon"
+parameter which is labeled "LEVEL Derivative" in the Cleanflight Configurator GUI. This sets the percentage of your
+stick travel that should have self-leveling applied to it, so smaller values cause more of the stick area to fly using
+only the gyros. The default is 75% </p>
+<p>For example, at a setting of "100" for "sensitivity_horizon", 100% self-leveling strength will be applied at center
+stick, 50% self-leveling will be applied at 50% stick, and no self-leveling will be applied at 100% stick. If
+sensitivity is decreased to 75, 100% self-leveling will be applied at center stick, 50% will be applied at 63%
+stick, and no self-leveling will be applied at 75% stick and onwards.</p>
+<h2 id="rc-rate-pitch-and-roll-rates-pr-rate-before-they-were-separated-and-yaw-rate">RC rate, Pitch and Roll Rates (P/R rate before they were separated), and Yaw rate</h2>
+<h3 id="rc-rate">RC Rate</h3>
+<p>An overall multiplier on the RC stick inputs for pitch, rol;, and yaw. </p>
+<p>On PID Controller MW23 can be used to set the "feel" around center stick for small control movements. (RC Expo also affects this).For PID Controllers MWREWRITE and LUX, this basically sets the baseline stick sensitivity</p>
+<h3 id="pitch-and-roll-rates">Pitch and Roll rates</h3>
+<p>In PID Controller MW23 the affect of the PID error terms for P and D are gradually lessened as the control sticks are moved away from center, ie 0.3 rate gives a 30% reduction of those terms at full throw, effectively making the stabilizing effect of the PID controller less at stick 90. This results in faster rotation rates. So for these controllers, you can set center stick sensitivity to control movement with RC rate above, and yet have much faster rotation rates at stick extremes.</p>
+<p>For PID Controllers MWREWRITE and LUX, this is an multiplier on overall stick sensitivity, like RC rate, but for roll and pitch independently. Stablility (to outside factors like turbulence) is not reduced at stick extremes. A zero value is no increase in stick sensitivity over that set by RC rate above. Higher values increases stick sensitivity across the entire stick movement range.</p>
+<h3 id="yaw-rate">Yaw Rate</h3>
+<p>In PID Controllers MWREWRITE and LUX, it acts as a stick sensitivity multiplier, as explained above.</p>
+<h3 id="filters">Filters</h3>
+<p>gyro_lpf sets the hardware gyro low pass filter value. if 0 or 256 the gyro uses the least hardware filtering available (256Hz) and the internal sampling rate is the fastest possible (8kHz) with the least possible delay. The lower the number the stronger the filtering. Stronger filtering reduces noise in the gyro signal before that data gets into the PID calculations. Stronger filtering adds delays that can be associated with wobble and reduced responsiveness. Filtering is needed because motor/frame noise can cause overheating of motors especially when amplified by Dterm in quads with low mass and fast braking ESCs. If 188 or lower are chosen, the gyro sampling is internally at 1kHz and delays are greater. Faster sampling is good because things are slightly more responsive but can cause aliasing noise. Setting to 188 allows syncing of the FC to the gyro at 1kHz (if gyro_sync is enabled and available in the code) which reduces aliasing a lot. </p>
+<p>gyro_cut_hz is an IIR software low-pass filter that can be configured to any desired frequency. If set to a value above zero it is active. It works after the hardware filter on the gyro (in the FC code) and further reduces noise. The two filters in series have twice the cut rate of one alone. There's not a lot of sense running gyro_cut_hz at a value above gyro_lpf. if used, it is typically set about half the hardware filter rate to enhance the cut of higher frequencies before the PID calculations. Frequencies above 100Hz are of no interest to us from a flight control perspective - they can and should be removed from the signal before it gets to the PID calculation stage. </p>
+<p>pterm_cut_hz is an IIR software low-pass filter that can be configured to any desired frequency. If enabled, it works after both the gyro_cut filters. It specifically filters only the P term data. Lower values can therefore specifically help remove noise in the P term part of the PID calculation. Blackbox recording is needed to determine what value works best on this filter. It is only really needed if you have P term noise despite the gyro filters, but typically it is needed with the commonly used relatively high gyro filter values.</p>
+<p>dterm_cut_hz is an IIR software low-pass filter that can be configured to any desired frequency. It works after the gyro_cut filters and specifically filters only the D term data. D term data is frequency dependent, the higher the frequency, the greater the computed D term value. This filter is required if despite the gyro filtering there remains excessive D term noise. Typically it needs to be set quite low because D term noise is a major problem with typical IIR filters. If set too low the phase shift in D term reduces the effectiveness of D term in controlling stop wobble, so this value needs some care when varying it. Again blackbox recording is needed to properly optimise the value for this filter.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Profiles/" class="btn btn-neutral float-right" title="Profiles">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Oneshot/" class="btn btn-neutral" title="Oneshot"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  
+
+</body>
+</html>
